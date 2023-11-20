@@ -1,5 +1,9 @@
 import styled from "styled-components";
 import { useEffect, useRef, useState } from "react";
+import Design from "../assets/images/design.png";
+import Development from "../assets/images/development.png";
+import Delivery from "../assets/images/delivery.png";
+
 interface MainProps {
   scroll: string;
 }
@@ -90,37 +94,110 @@ export const Home = () => {
           </AboutLittleText>
           <Button>Learn more</Button>
         </AboutUs>
+
+        <Services>
+          <AboutText>SERVICES</AboutText>
+          <Line></Line>
+          <RectangleDiv style={{ display: "flex" }}>
+            <div>
+              <img src={Design} />
+              <p>UI/UX design</p>
+            </div>
+            <div>
+              <img src={Development} />
+              <p>software development</p>
+            </div>
+            <div>
+              <img src={Delivery} />
+              <p>managed delivery</p>
+            </div>
+          </RectangleDiv>
+        </Services>
       </Content>
     </div>
   );
 };
+const RectangleDiv = styled.div`
+  display: "flex";
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 29px;
+  @media (min-width: 1025px) {
+    gap: 0;
+  }
+  div {
+    width: 279px;
+    height: 144px;
+    border-radius: 21px;
+    border: 2px solid #bbb;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    @media (min-width: 1025px) {
+      width: 368px;
+      height: 160px;
+      margin: 0;
+    }
+    p {
+      font-size: 25px;
+      margin-top: 10px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 150%;
+      @media (min-width: 1025px) {
+        font-size: 34px;
+      }
+    }
+    img {
+      width: 56px;
+      height: 56px;
+    }
+  }
+`;
+
+const Services = styled.div`
+  width: 90%;
+  margin: auto;
+  margin-top: 126px;
+`;
 
 const Button = styled.button`
-  font-size: 24px;
+  font-size: 17px;
   font-style: normal;
   font-weight: 400;
   line-height: 150%;
   background-color: white;
   margin-top: 40px;
-  padding: 8px 24px;
+  padding: 4px 12px;
   border-radius: 4px;
   border: 1px solid #000814;
   cursor: pointer;
+  @media (min-width: 1025px) {
+    padding: 8px 24px;
+    font-size: 24px;
+  }
 `;
 const AboutLittleText = styled.p`
   color: #000;
-  font-family: Electrolize;
-  font-size: 24px;
+  font-size: 17px;
   font-style: normal;
   font-weight: 400;
   line-height: 150%;
+  @media (min-width: 1025px) {
+    font-size: 24px;
+  }
 `;
 const AboutText = styled.h1`
-  color: #000814;
-  font-size: 64px;
+  font-size: 25px;
   font-style: normal;
   font-weight: 400;
   line-height: 150%;
+  color: #000814;
+  @media (min-width: 1025px) {
+    font-size: 64px;
+  }
 `;
 const AboutUs = styled.div`
   width: 90%;
@@ -129,15 +206,19 @@ const AboutUs = styled.div`
 const Line = styled.div`
   height: 6px;
   background: #120093;
-  margin-bottom: 42px;
+  margin-bottom: 15px;
+  @media (min-width: 1025px) {
+    margin-bottom: 42px;
+  }
 `;
 
 const Content = styled.div<MainProps>`
   position: absolute;
-  top: 120%;
-  max-height: ${(props) => (props.scroll === "true" ? "100vh" : "none")};
-  overflow-y: ${(props) => (props.scroll === "true" ? "auto" : "hidden")};
+  top: 110%;
   transition: max-height 0.5s ease-in-out;
+  @media (min-width: 1025px) {
+    top: 120%;
+  }
 `;
 
 const Container = styled.div`

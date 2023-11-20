@@ -7,7 +7,7 @@ const MobileHeader = ({
   setIsActive,
 }: {
   active: string;
-  setIsActive: any;
+  setIsActive: React.Dispatch<React.SetStateAction<string>>;
 }) => {
   return (
     <Main active={active}>
@@ -35,7 +35,7 @@ export default MobileHeader;
 const Main = styled.div<Props>`
   position: fixed;
   z-index: 999;
-  top: 60px;
+  top: 52px;
   width: 100%;
   height: 100vh;
   background-color: white;
