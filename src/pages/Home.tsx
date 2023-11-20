@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { Header } from "../components/Header";
 import { useEffect, useRef, useState } from "react";
 interface MainProps {
   scroll: string;
@@ -25,17 +24,13 @@ export const Home = () => {
     if (contentRef.current) {
       const windowHeight = window.innerHeight;
       contentRef.current.scrollIntoView({ behavior: "smooth", block: "end" });
-      const starsContainerHeight = contentRef.current.offsetHeight;
       const scrollPosition = windowHeight;
       window.scrollTo({
         top: scrollPosition,
         behavior: "smooth",
       });
-
-      console.log("StarsContainer height:", windowHeight);
     }
   };
-  console.log(scroll);
 
   return (
     <div>
@@ -47,7 +42,7 @@ export const Home = () => {
           <div className="line"></div>
           <div className="line"></div>
         </div>
-        <Header />
+
         <Container>
           <h1>
             information technology, consulting, <br /> and outsourcing company
@@ -59,7 +54,7 @@ export const Home = () => {
             height="36"
             viewBox="0 0 36 36"
             fill="none"
-            style={{ width: "100%" }}
+            style={{ width: "100%", cursor: "pointer" }}
           >
             <path
               fillRule="evenodd"
@@ -78,79 +73,64 @@ export const Home = () => {
       </div>
 
       <Content ref={contentRef} scroll={scroll.toString()}>
-        <h1 style={{ color: "red" }}>aloo</h1>
-        <h1>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo sunt
-          accusantium, in facilis ipsa deserunt accusamus, reiciendis quos
-          nostrum possimus quidem repellat dignissimos fugit recusandae deleniti
-          eaque mollitia omnis iure! Lorem ipsum dolor sit amet, consectetur
-          adipisicing elit. Illo sunt accusantium, in facilis ipsa deserunt
-          accusamus, reiciendis quos nostrum possimus quidem repellat
-          dignissimos fugit recusandae deleniti eaque mollitia omnis iure! Lorem
-          ipsum dolor sit amet, consectetur adipisicing elit. Illo sunt
-          accusantium, in facilis ipsa deserunt accusamus, reiciendis quos
-          nostrum possimus quidem repellat dignissimos fugit recusandae deleniti
-          eaque mollitia omnis iure! Lorem ipsum dolor sit amet, consectetur
-          adipisicing elit. Illo sunt accusantium, in facilis ipsa deserunt
-          accusamus, reiciendis quos nostrum possimus quidem repellat
-          dignissimos fugit recusandae deleniti eaque mollitia omnis iure! Lorem
-          ipsum dolor sit amet, consectetur adipisicing elit. Illo sunt
-          accusantium, in facilis ipsa deserunt accusamus, reiciendis quos
-          nostrum possimus quidem repellat dignissimos fugit recusandae deleniti
-          eaque mollitia omnis iure! Lorem ipsum dolor sit amet, consectetur
-          adipisicing elit. Illo sunt accusantium, in facilis ipsa deserunt
-          accusamus, reiciendis quos nostrum possimus quidem repellat
-          dignissimos fugit recusandae deleniti eaque mollitia omnis iure! Lorem
-          ipsum dolor sit amet, consectetur adipisicing elit. Illo sunt
-          accusantium, in facilis ipsa deserunt accusamus, reiciendis quos
-          nostrum possimus quidem repellat dignissimos fugit recusandae deleniti
-          eaque mollitia omnis iure! Lorem ipsum dolor sit amet, consectetur
-          adipisicing elit. Illo sunt accusantium, in facilis ipsa deserunt
-          accusamus, reiciendis quos nostrum possimus quidem repellat
-          dignissimos fugit recusandae deleniti eaque mollitia omnis iure! Lorem
-          ipsum dolor sit amet, consectetur adipisicing elit. Illo sunt
-          accusantium, in facilis ipsa deserunt accusamus, reiciendis quos
-          nostrum possimus quidem repellat dignissimos fugit recusandae deleniti
-          eaque mollitia omnis iure!
-        </h1>
-        <h1>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo sunt
-          accusantium, in facilis ipsa deserunt accusamus, reiciendis quos
-          nostrum possimus quidem repellat dignissimos fugit recusandae deleniti
-          eaque mollitia omnis iure! Lorem ipsum dolor sit amet, consectetur
-          adipisicing elit. Illo sunt accusantium, in facilis ipsa deserunt
-          accusamus, reiciendis quos nostrum possimus quidem repellat
-          dignissimos fugit recusandae deleniti eaque mollitia omnis iure! Lorem
-          ipsum dolor sit amet, consectetur adipisicing elit. Illo sunt
-          accusantium, in facilis ipsa deserunt accusamus, reiciendis quos
-          nostrum possimus quidem repellat dignissimos fugit recusandae deleniti
-          eaque mollitia omnis iure! Lorem ipsum dolor sit amet, consectetur
-          adipisicing elit. Illo sunt accusantium, in facilis ipsa deserunt
-          accusamus, reiciendis quos nostrum possimus quidem repellat
-          dignissimos fugit recusandae deleniti eaque mollitia omnis iure! Lorem
-          ipsum dolor sit amet, consectetur adipisicing elit. Illo sunt
-          accusantium, in facilis ipsa deserunt accusamus, reiciendis quos
-          nostrum possimus quidem repellat dignissimos fugit recusandae deleniti
-          eaque mollitia omnis iure! Lorem ipsum dolor sit amet, consectetur
-          adipisicing elit. Illo sunt accusantium, in facilis ipsa deserunt
-          accusamus, reiciendis quos nostrum possimus quidem repellat
-          dignissimos fugit recusandae deleniti eaque mollitia omnis iure! Lorem
-          ipsum dolor sit amet, consectetur adipisicing elit. Illo sunt
-          accusantium, in facilis ipsa deserunt accusamus, reiciendis quos
-          nostrum possimus quidem repellat dignissimos fugit recusandae deleniti
-          eaque mollitia omnis iure! Lorem ipsum dolor sit amet, consectetur
-          adipisicing elit. Illo sunt accusantium, in facilis ipsa deserunt
-          accusamus, reiciendis quos nostrum possimus quidem repellat
-          dignissimos fugit recusandae deleniti eaque mollitia omnis iure! Lorem
-          ipsum dolor sit amet, consectetur adipisicing elit. Illo sunt
-          accusantium, in facilis ipsa deserunt accusamus, reiciendis quos
-          nostrum possimus quidem repellat dignissimos fugit recusandae deleniti
-          eaque mollitia omnis iure!
-        </h1>
+        <AboutUs>
+          <AboutText>ABOUT US</AboutText>
+          <Line></Line>
+          <AboutLittleText>
+            Our company has ultimate experience building custom software
+            solutions for financial and non financial institutions Established
+            in the year 2000, ATMS (form FNXCo Holding Silver Label) is a global
+            information technology, consulting and outsourcing company. <br />{" "}
+            <br />
+            We have pioneered ourselves in providing end-to-end solutions and
+            services in the areas of information technology, consulting and
+            outsourcing in various segments of industry like agriculture,
+            education, finance, healthcare, life sciences, hotel/hospitality,
+            media and entertainment, and more.
+          </AboutLittleText>
+          <Button>Learn more</Button>
+        </AboutUs>
       </Content>
     </div>
   );
 };
+
+const Button = styled.button`
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  background-color: white;
+  margin-top: 40px;
+  padding: 8px 24px;
+  border-radius: 4px;
+  border: 1px solid #000814;
+  cursor: pointer;
+`;
+const AboutLittleText = styled.p`
+  color: #000;
+  font-family: Electrolize;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+`;
+const AboutText = styled.h1`
+  color: #000814;
+  font-size: 64px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+`;
+const AboutUs = styled.div`
+  width: 90%;
+  margin: auto;
+`;
+const Line = styled.div`
+  height: 6px;
+  background: #120093;
+  margin-bottom: 42px;
+`;
 
 const Content = styled.div<MainProps>`
   position: absolute;
@@ -182,93 +162,5 @@ const Container = styled.div`
     @media (min-width: 1025px) {
       font-size: 64px;
     }
-  }
-`;
-
-const roundedCorners = `
-  border-radius: 50%;
-`;
-
-const rotateBase = `
-  transform: rotate3d(-1, 1, 0, 0deg);
-`;
-
-const rotateRight = `
-  transform: rotate3d(-1, 1, 0, 30deg);
-`;
-
-const rotateLeft = `
-  transform: rotate3d(-1, 1, 0, -30deg);
-`;
-
-const generateStars = (n: number) => {
-  let value = `0 ${Math.floor(Math.random() * 2000)}px ${Math.floor(
-    Math.random() * 2000
-  )}px #FFF`;
-
-  for (let i = 2; i <= n; i++) {
-    value += `, ${Math.floor(Math.random() * 2000)}px ${Math.floor(
-      Math.random() * 2000
-    )}px #FFF`;
-  }
-
-  return value;
-};
-
-const starsSmall = generateStars(700);
-const starsMedium = generateStars(200);
-const starsBig = generateStars(100);
-
-const StarsContainer = styled.div`
-  height: 100vh;
-  width: 100%;
-  background: radial-gradient(ellipse at bottom, #ecf0f4 0%, #120093 100%);
-  overflow: hidden;
-`;
-
-const Stars = styled.div`
-  width: 1px;
-  height: 1px;
-  background: transparent;
-  box-shadow: ${starsSmall};
-  ${roundedCorners}
-
-  &::after {
-    content: " ";
-    /* position: absolute; */
-    margin: auto;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 1px;
-    height: 1px;
-    background: transparent;
-    box-shadow: ${starsSmall};
-    ${roundedCorners}
-  }
-`;
-
-const Stars2 = styled(Stars)`
-  width: 2px;
-  height: 2px;
-  box-shadow: ${starsMedium};
-
-  &::after {
-    width: 2px;
-    height: 2px;
-    box-shadow: ${starsMedium};
-  }
-`;
-
-const Stars3 = styled(Stars)`
-  width: 3px;
-  height: 3px;
-  box-shadow: ${starsBig};
-
-  &::after {
-    width: 3px;
-    height: 3px;
-    box-shadow: ${starsBig};
   }
 `;
