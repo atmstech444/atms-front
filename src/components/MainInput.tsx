@@ -45,21 +45,26 @@ const Input = styled.input`
   width: 240px;
   border-radius: 4px;
 
+  font-family: Electrolize;
+
+
   @media (min-width: 1440px) {
     width: 300px;
   }
+
 `;
 
-const InputDiv = styled.div`
+export const InputDiv = styled.div`
   display: flex;
   flex-direction: column;
   align-items: start;
   gap: 10px;
 `;
 
-const Label = styled.label`
+export const Label = styled.label`
   font-size: 20px;
   font-weight: 700;
+  font-family: Electrolize;
 `;
 
 const Error = styled.p`
