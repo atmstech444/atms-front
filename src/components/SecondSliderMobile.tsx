@@ -36,7 +36,6 @@ const SecondSlider = () => {
       backgroundColor: "#CDE4BF",
     },
   ];
-
   const settings = {
     infinite: true,
     speed: 500,
@@ -47,6 +46,7 @@ const SecondSlider = () => {
     arrows: false,
     dots: false,
     rtl: true,
+    cssEase: "linear",
   };
 
   return (
