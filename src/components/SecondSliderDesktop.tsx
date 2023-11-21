@@ -18,7 +18,8 @@ export default class SecondSliderDesktop extends Component {
       speed: 2000,
       autoplaySpeed: 2000,
       cssEase: "linear",
-      rtl: true
+      rtl: true,
+      arrows: false
     };
     const sliderItems = [
       {
@@ -86,6 +87,7 @@ const SliderMain = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin-top: 100px;
     @media (min-width: 1440px){ 
         width: 1440px;
     }
@@ -109,6 +111,9 @@ const SliderItem = styled.div`
   width: 300px;
   padding-bottom: 40px;
   margin-left: 20px;
+  @media (min-width: 360px){
+    width: 200px;
+  }
   @media (min-width: 768px){
     width: 210px;
   }
@@ -125,6 +130,9 @@ const SliderContent = styled.div<SliderContentProps>`
 
 const SliderImage = styled.img`
   width: 100%;
+  @media (min-width: 360px){
+    width: 150px;
+  }
   @media (min-width: 768px){
     width: 200px;
   }

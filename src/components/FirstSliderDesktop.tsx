@@ -18,7 +18,7 @@ export default class FirstSliderDesktop extends Component {
       speed: 2000,
       autoplaySpeed: 2000,
       cssEase: "linear",
-  
+      arrows: false,
     };
     const sliderItems = [
       {
@@ -82,23 +82,24 @@ export default class FirstSliderDesktop extends Component {
 }
 
 const SliderMain = styled.div`
-    width: 1100px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    @media (min-width: 1440px){ 
-        width: 1440px;
-    }
-    @media (min-width: 1600px){ 
-        width: 1600px;
-    }
-    @media (min-width: 1800px){ 
-        width: 1800px;
-    }
-    @media (min-width: 1900px){ 
-        width: 1900px;
-    }
-`
+  width: 1100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 100px;
+  @media (min-width: 1440px) {
+    width: 1440px;
+  }
+  @media (min-width: 1600px) {
+    width: 1600px;
+  }
+  @media (min-width: 1800px) {
+    width: 1800px;
+  }
+  @media (min-width: 1900px) {
+    width: 1900px;
+  }
+`;
 const SliderItem = styled.div`
   display: flex;
   flex-direction: column;
@@ -109,10 +110,13 @@ const SliderItem = styled.div`
   width: 300px;
   padding-bottom: 40px;
   margin-left: 20px;
-  @media (min-width: 768px){
+  @media (min-width: 360px) {
+    width: 200px;
+  }
+  @media (min-width: 768px) {
     width: 210px;
   }
-  @media (min-width: 1440px){
+  @media (min-width: 1440px) {
     width: 410px;
   }
 `;
@@ -125,10 +129,13 @@ const SliderContent = styled.div<SliderContentProps>`
 
 const SliderImage = styled.img`
   width: 100%;
-  @media (min-width: 768px){
+  @media (min-width: 360px) {
+    width: 150px;
+  }
+  @media (min-width: 768px) {
     width: 200px;
   }
-  @media (min-width: 1440px){
+  @media (min-width: 1440px) {
     width: 100%;
   }
 `;
