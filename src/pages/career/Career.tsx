@@ -17,6 +17,7 @@ import {
   Label,
   SubmitButton,
   Img,
+  Header,
 } from "./Styles";
 
 const Career = () => {
@@ -83,9 +84,11 @@ const Career = () => {
   };
   return (
     <>
-      <MainContainer>
+      <Header>
         <CareerText>Career</CareerText>
         <Line></Line>
+      </Header>
+      <MainContainer>
         <Paragraph>
           Your next career move might be just around the corner – let's make it
           happen together!"

@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const MainContainer = styled.div`
-  margin-top: 150px;
   padding: 0 70px;
 
   @media (max-width: 599px) {
@@ -10,7 +9,7 @@ export const MainContainer = styled.div`
 `;
 
 export const CareerText = styled.h1`
-  color: #000814;
+  color: #fff;
   font-size: 64px;
   font-style: normal;
   font-weight: 400;
@@ -144,4 +143,15 @@ export const Label = styled.label`
 export const Error = styled.p`
   font-size: 14px;
   color: red;
+`;
+
+export const Header = styled.div`
+  background-color: #000814;
+  padding: 18% 24px 0 24px;
+  @media (min-width: 678px) {
+    padding: 10% 24px 0 24px;
+  }
+  @media (min-width: 1024px) {
+    padding: 10% 72px 0 72px;
+  }
 `;
