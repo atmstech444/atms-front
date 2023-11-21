@@ -1,5 +1,9 @@
 import styled from "styled-components";
 import { useEffect, useRef, useState } from "react";
+
+import SliderComponent from "../components/SliderComponent";
+import SecondSlider from "../components/SecondSlider";
+
 import Design from "../assets/images/design.png";
 import Development from "../assets/images/development.png";
 import Delivery from "../assets/images/delivery.png";
@@ -95,6 +99,15 @@ export const Home = () => {
           <Button>Learn more</Button>
         </AboutUs>
 
+
+        <div>
+         <SliderComponent />
+        </div>
+
+        <div>
+          <SecondSlider />
+        </div>
+
         <Services>
           <AboutText>SERVICES</AboutText>
           <Line></Line>
@@ -113,6 +126,7 @@ export const Home = () => {
             </div>
           </RectangleDiv>
         </Services>
+
       </Content>
     </div>
   );
@@ -214,7 +228,12 @@ const Line = styled.div`
 
 const Content = styled.div<MainProps>`
   position: absolute;
+  top: 120%;
+  /* max-height: ${(props) => (props.scroll === "true" ? "100vh" : "none")}; */
+  overflow-y: ${(props) => (props.scroll === "true" ? "auto" : "hidden")};
+
   top: 110%;
+
   transition: max-height 0.5s ease-in-out;
   @media (min-width: 1025px) {
     top: 120%;
