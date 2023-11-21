@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { useFormContext } from "react-hook-form";
 
 interface InputProps {
   type: any;
@@ -6,14 +7,30 @@ interface InputProps {
   name: string;
   label: string;
   placeholder: string;
+  error?: string;
 }
 
-const MainInput = ({ type, id, name, label, placeholder }: InputProps) => {
+const MainInput = ({
+  type,
+  id,
+  name,
+  label,
+  placeholder,
+  error,
+}: InputProps) => {
+  const { register } = useFormContext();
   return (
     <>
       <InputDiv>
         <Label>{label}</Label>
-        <Input type={type} placeholder={placeholder} id={id} name={name} />
+        <Input
+          type={type}
+          placeholder={placeholder}
+          id={id}
+          {...register(name)}
+          name={name}
+        />
+        <Error>{error}</Error>
       </InputDiv>
     </>
   );
@@ -43,4 +60,9 @@ const InputDiv = styled.div`
 const Label = styled.label`
   font-size: 20px;
   font-weight: 700;
+`;
+
+const Error = styled.p`
+  font-size: 14px;
+  color: red;
 `;
