@@ -3,21 +3,18 @@ import LogoImage from "../assets/images/logo.png";
 import LogoWhite from "../assets/images/logoWhite.png";
 import styled from "styled-components";
 import MobileHeader from "./MobileHeader";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 interface MainProps {
   isscrolled: string;
 }
 export interface Props {
   active: string;
-  isscrolled: string;
 }
 export const Header = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [isHeaderOpen, setIsHeaderOpen] = useState(false);
-  const [isActive, setIsActive] = useState("");
-  const location = useLocation();
-  console.log(location.pathname);
+  const [isScrolled, setIsScrolled] = useState<boolean>(false);
+  const [isHeaderOpen, setIsHeaderOpen] = useState<boolean>(false);
+  const [isActive, setIsActive] = useState<string>("");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -35,7 +32,7 @@ export const Header = () => {
     <>
       <Main isscrolled={isScrolled.toString()}>
         <Content>
-          <Link to="/">
+          <Link to="/" onClick={() => setIsActive("")}>
             <Logo src={isScrolled ? LogoImage : LogoWhite} />
           </Link>
           <ImgContainer onClick={() => setIsHeaderOpen(!isHeaderOpen)}>
@@ -66,7 +63,7 @@ export const Header = () => {
               />
             </svg>
           </ImgContainer>
-          <DesktopHeader active={isActive} isscrolled={isScrolled.toString()}>
+          <DesktopHeader active={isActive}>
             <Link to="services" onClick={() => setIsActive("services")}>
               Services
             </Link>
@@ -103,14 +100,11 @@ const Content = styled.div`
 const Logo = styled.img`
   height: 48px;
   width: 110px;
-  margin-top: 8px;
   cursor: pointer;
   @media (min-width: 1025px) {
-    width: 127px;
     height: 146px;
     width: 242px;
     margin-left: 72px;
-    margin-top: 24px;
   }
 `;
 
@@ -129,8 +123,7 @@ const DesktopHeader = styled.div<Props>`
     cursor: pointer;
     color: #7f8389;
     &:nth-child(1) {
-      color: ${(props) =>
-        props.active === "services" && props.isscrolled === "true" && "white"};
+      color: ${(props) => props.active === "services" && "black"};
     }
     &:nth-child(2) {
       color: ${(props) => props.active === "project" && "white"};
