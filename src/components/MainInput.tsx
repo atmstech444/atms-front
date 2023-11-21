@@ -25,8 +25,12 @@ const Input = styled.input`
   padding: 25px 30px;
   background-color: #e5e7ea;
   border: none;
-  width: 250px;
+  width: 240px;
   border-radius: 4px;
+
+  @media (min-width: 1440px) {
+    width: 300px;
+  }
 `;
 
 const InputDiv = styled.div`
