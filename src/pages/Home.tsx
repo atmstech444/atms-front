@@ -89,21 +89,12 @@ export const Home = () => {
           <Button>Learn more</Button>
         </AboutUs>
 
-
         <div>
-        {isMobileScreen ? (
-          <SliderComponent />
-        ) : (
           <FirstSliderDesktop />
-        )}
         </div>
 
         <div>
-        {isMobileScreen ? (
-          <SecondSliderMobile />
-        ) : (
           <SecondSliderDesktop />
-        )}
         </div>
 
         <Services>
