@@ -109,6 +109,9 @@ const SliderItem = styled.div`
   width: 300px;
   padding-bottom: 40px;
   margin-left: 20px;
+  @media (min-width: 768px){
+    width: 210px;
+  }
   @media (min-width: 1440px){
     width: 410px;
   }
@@ -122,4 +125,10 @@ const SliderContent = styled.div<SliderContentProps>`
 
 const SliderImage = styled.img`
   width: 100%;
+  @media (min-width: 768px){
+    width: 200px;
+  }
+  @media (min-width: 1440px){
+    width: 100%;
+  }
 `;
