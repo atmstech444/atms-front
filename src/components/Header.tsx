@@ -4,6 +4,7 @@ import LogoWhite from "../assets/images/logoWhite.png";
 import styled from "styled-components";
 import MobileHeader from "./MobileHeader";
 import { Link } from "react-router-dom";
+import Menu from "../assets/icons/Menu.svg";
 
 interface MainProps {
   isscrolled: string;
@@ -36,54 +37,92 @@ export const Header = () => {
             <Logo src={isScrolled ? LogoImage : LogoWhite} />
           </Link>
           <ImgContainer onClick={() => setIsHeaderOpen(!isHeaderOpen)}>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-            >
-              <path
-                d="M3 7H21"
-                stroke="#292D32"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-              />
-              <path
-                d="M3 12H21"
-                stroke="#292D32"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-              />
-              <path
-                d="M3 17H21"
-                stroke="#292D32"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-              />
-            </svg>
+            {isScrolled ? (
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <path
+                  d="M3 7H21"
+                  stroke="#292D32"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                />
+                <path
+                  d="M3 12H21"
+                  stroke="#292D32"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                />
+                <path
+                  d="M3 17H21"
+                  stroke="#292D32"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                />
+              </svg>
+            ) : (
+              <img src={Menu} />
+            )}
           </ImgContainer>
           <DesktopHeader active={isActive}>
-            <Link to="services" onClick={() => setIsActive("services")}>
+            <Link
+              to="services"
+              style={{
+                color: isScrolled && isActive === "services" ? "black" : "",
+              }}
+              onClick={() => setIsActive("services")}
+            >
               Services
             </Link>
-            <Link to="project" onClick={() => setIsActive("project")}>
+            <Link
+              to="project"
+              style={{
+                color: isScrolled && isActive === "project" ? "black" : "",
+              }}
+              onClick={() => setIsActive("project")}
+            >
               Project
             </Link>
-            <Link to="aboutus" onClick={() => setIsActive("aboutus")}>
+            <Link
+              to="aboutus"
+              style={{
+                color: isScrolled && isActive === "aboutus" ? "black" : "",
+              }}
+              onClick={() => setIsActive("aboutus")}
+            >
               About us
             </Link>
-            <Link to="career" onClick={() => setIsActive("career")}>
+            <Link
+              to="career"
+              style={{
+                color: isScrolled && isActive === "career" ? "black" : "",
+              }}
+              onClick={() => setIsActive("career")}
+            >
               Career
             </Link>
-            <Link to="contact" onClick={() => setIsActive("contact")}>
+            <Link
+              to="contact"
+              style={{
+                color: isScrolled && isActive === "contact" ? "black" : "",
+              }}
+              onClick={() => setIsActive("contact")}
+            >
               Contact
             </Link>
           </DesktopHeader>
         </Content>
       </Main>
       {isHeaderOpen && (
-        <MobileHeader active={isActive} setIsActive={setIsActive} />
+        <MobileHeader
+          active={isActive}
+          setIsActive={setIsActive}
+          setIsHeaderOpen={setIsHeaderOpen}
+        />
       )}
     </>
   );
@@ -98,11 +137,9 @@ const Content = styled.div`
   }
 `;
 const Logo = styled.img`
-  height: 48px;
   width: 110px;
   cursor: pointer;
   @media (min-width: 1025px) {
-    height: 146px;
     width: 242px;
     margin-left: 72px;
   }
@@ -119,11 +156,12 @@ const DesktopHeader = styled.div<Props>`
   a {
     font-size: 32px;
     font-style: normal;
+    font-family: "Bebas Neue";
     font-weight: 400;
     cursor: pointer;
     color: #7f8389;
     &:nth-child(1) {
-      color: ${(props) => props.active === "services" && "black"};
+      color: ${(props) => props.active === "services" && "white"};
     }
     &:nth-child(2) {
       color: ${(props) => props.active === "project" && "white"};
@@ -148,6 +186,7 @@ const Main = styled.div<MainProps>`
   display: flex;
   top: 0;
   position: fixed;
+  padding: 20px 0;
   box-shadow: ${(props) =>
     props.isscrolled === "true" ? "0 2px 28px 0 rgba(0,0,0,.06)" : "none"};
   background-color: ${(props) =>
