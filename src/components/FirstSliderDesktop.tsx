@@ -7,18 +7,18 @@ interface SliderContentProps {
   backgroundColor: string;
 }
 
-export default class SecondSliderDesktop extends Component {
+export default class FirstSliderDesktop extends Component {
   render() {
     const settings = {
       dots: false,
       infinite: true,
-      slidesToShow: 3,
+      slidesToShow: 4,
       slidesToScroll: 1,
       autoplay: true,
       speed: 2000,
       autoplaySpeed: 2000,
       cssEase: "linear",
-      rtl: false
+  
     };
     const sliderItems = [
       {
@@ -109,6 +109,9 @@ const SliderItem = styled.div`
   width: 300px;
   padding-bottom: 40px;
   margin-left: 20px;
+  @media (min-width: 1440px){
+    width: 410px;
+  }
 `;
 
 const SliderContent = styled.div<SliderContentProps>`
