@@ -36,15 +36,16 @@ const SliderComponent = () => {
       backgroundColor: "#CDE4BF",
     },
   ];
-
   const settings = {
+    infinite: true,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 1800,
-    infinite: true,
-    arrows: false
+    arrows: false,
+    dots: false,
+    cssEase: "linear",
   };
 
   return (
@@ -81,9 +82,9 @@ const SliderItem = styled.div`
   align-items: center;
   gap: 24px;
   padding-top: 16px;
-  width: 100%;
+  width: 300px;
   padding-bottom: 40px;
-  margin-right: 20px;
+  margin-left: 20px;
 `;
 
 const SliderContent = styled.div<SliderContentProps>`
