@@ -2,6 +2,10 @@
 * {
   margin: 0;
 }
+
+body {
+  overflow-x: hidden;
+}
 .lines {
   position: absolute;
   top: 0;
