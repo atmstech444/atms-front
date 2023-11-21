@@ -1,7 +1,86 @@
-import styled from "styled-components";
 import MainInput from "../../components/MainInput";
+import icon from "../../assets/images/search.svg";
+import { useForm, FormProvider } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import * as yup from "yup";
+import axios from "axios";
+import {
+  Error,
+  InputDiv,
+  StyledInput,
+  MainContainer,
+  CareerText,
+  Line,
+  Paragraph,
+  InputGridContainer,
+  Form,
+  Label,
+  SubmitButton,
+  Img,
+} from "./Styles";
 
 const Career = () => {
+  const SchemaValidation = yup.object({
+    name: yup.string().required("name is required"),
+    email: yup
+      .string()
+      .required("email is required")
+      .email("Invalid email format"),
+    position: yup.string().required("position is required"),
+    file: yup.mixed().test("fileRequired", "CV is required", (value: any) => {
+      return value;
+    }),
+  });
+  const methods = useForm({
+    resolver: yupResolver(SchemaValidation),
+    defaultValues: {
+      name: "",
+      email: "",
+      position: "",
+      file: "",
+    },
+    mode: "all",
+  });
+  const {
+    register,
+    formState: { errors },
+    handleSubmit,
+    setValue,
+    reset,
+    watch,
+  } = methods;
+
+  const selectedFile: any = watch("file");
+  const handleFileChange = (e: any) => {
+    setValue("file", e.target.files[0]);
+  };
+
+  const handleButtonClick = () => {
+    const fileInput = document.getElementById("file");
+    fileInput?.click();
+  };
+
+  const onSubmit = async (data: any) => {
+    const formData = new FormData();
+    formData.append("name", data.name);
+    formData.append("email", data.email);
+    formData.append("position", data.position);
+    if (data.file) {
+      formData.append("file", data.file);
+    }
+    try {
+      const response = await axios.post(
+        "https://www.atms.ge/process.php",
+        formData
+      );
+      if (response.status === 200) {
+        reset();
+      }
+      return response;
+    } catch (error) {
+      console.error(error);
+    }
+  };
   return (
     <>
       <MainContainer>
@@ -11,88 +90,58 @@ const Career = () => {
           Your next career move might be just around the corner – let's make it
           happen together!"
         </Paragraph>
-        <InputGridContainer>
-          <MainInput
-            type="text"
-            id="name"
-            name="name"
-            placeholder="name"
-            label="Name"
-          />
-          <MainInput
-            type="text"
-            id="name"
-            name="name"
-            placeholder="name"
-            label="Name"
-          />
-          <MainInput
-            type="text"
-            id="name"
-            name="name"
-            placeholder="name"
-            label="Name"
-          />
-          <MainInput
-            type="text"
-            id="name"
-            name="name"
-            placeholder="name"
-            label="Name"
-          />
-        </InputGridContainer>
+        <FormProvider {...methods}>
+          <Form onSubmit={handleSubmit(onSubmit)}>
+            <InputGridContainer>
+              <MainInput
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Name"
+                label="Name"
+                error={errors.name?.message}
+              />
+              <MainInput
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Email"
+                label="Email"
+                error={errors.email?.message}
+              />
+              <MainInput
+                type="text"
+                id="position"
+                name="position"
+                placeholder="Position"
+                label="Position"
+                error={errors.position?.message}
+              />
+              <InputDiv>
+                <input
+                  type="file"
+                  id="file"
+                  {...register("file")}
+                  placeholder="Choose File"
+                  onChange={handleFileChange}
+                  style={{ display: "none" }}
+                />
+                <Label htmlFor="file">Upload your CV</Label>
+                <StyledInput onClick={handleButtonClick}>
+                  <p style={{ color: "#757599" }}>
+                    {!selectedFile ? "Choose File" : selectedFile.name}
+                  </p>
+                </StyledInput>
+                <Error>{errors.file?.message}</Error>
+              </InputDiv>
+              <Img src={icon} alt="icon" />
+            </InputGridContainer>
+            <SubmitButton>Submit</SubmitButton>
+          </Form>
+        </FormProvider>
       </MainContainer>
     </>
   );
 };
 
 export default Career;
-
-const MainContainer = styled.div`
-  margin-top: 200px;
-  padding: 0 50px;
-`;
-
-const CareerText = styled.h1`
-  color: #000814;
-  font-size: 64px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 150%;
-
-  @media (max-width: 1080px) {
-    font-size: 42px;
-  }
-  @media (max-width: 599px) {
-    font-size: 30px;
-  }
-`;
-
-const Line = styled.div`
-  height: 6px;
-  background: #120093;
-  margin-bottom: 25px;
-`;
-
-const Paragraph = styled.div`
-  width: 340px;
-  height: 70px;
-  line-height: 1.3;
-  font-size: 22px;
-  @media (min-width: 999px) {
-    font-size: 32px;
-    width: 780px;
-  }
-`;
-
-const InputGridContainer = styled.div`
-  margin-top: 50px;
-  display: grid;
-  grid-template-columns: repeat(1fr);
-  place-items: center;
-  gap: 30px;
-
-  @media (min-width: 999px) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-`;

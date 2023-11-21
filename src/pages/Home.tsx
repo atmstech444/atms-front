@@ -1,10 +1,14 @@
 import styled from "styled-components";
 import { useEffect, useRef, useState } from "react";
+import SliderComponent from "../components/SliderComponent";
 import Design from "../assets/images/design.png";
 import Development from "../assets/images/development.png";
 import Delivery from "../assets/images/delivery.png";
 import Arrow from "../assets/icons/Arrow - Down Circle.svg";
 import Footer from "../components/Footer";
+import SecondSliderMobile from "../components/SecondSliderMobile";
+import SecondSliderDesktop from "../components/SecondSliderDesktop";
+import FirstSliderDesktop from "../components/FirstSliderDesktop";
 
 interface MainProps {
   scroll: string;
@@ -12,6 +16,9 @@ interface MainProps {
 export const Home = () => {
   const [scroll, setScroll] = useState<boolean>(false);
   const contentRef = useRef<HTMLDivElement>(null);
+  const [isMobileScreen, setIsMobileScreen] = useState<boolean>(
+    window.innerWidth <= 768
+  );
 
   useEffect(() => {
     const handleScroll = () => {
@@ -19,9 +26,14 @@ export const Home = () => {
       const scrollThreshold = 100;
       setScroll(scrollPosition > scrollThreshold);
     };
+    const handleResize = () => {
+      setIsMobileScreen(window.innerWidth <= 768);
+    };
     window.addEventListener("scroll", handleScroll);
+    window.addEventListener("resize", handleResize);
     return () => {
       window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleResize);
     };
   }, []);
 
@@ -77,6 +89,23 @@ export const Home = () => {
           <Button>Learn more</Button>
         </AboutUs>
 
+
+        <div>
+        {isMobileScreen ? (
+          <SliderComponent />
+        ) : (
+          <FirstSliderDesktop />
+        )}
+        </div>
+
+        <div>
+        {isMobileScreen ? (
+          <SecondSliderMobile />
+        ) : (
+          <SecondSliderDesktop />
+        )}
+        </div>
+
         <Services>
           <AboutText>SERVICES</AboutText>
           <Line></Line>
@@ -95,7 +124,6 @@ export const Home = () => {
             </div>
           </RectangleDiv>
         </Services>
-
         <Footer />
       </Content>
     </div>
@@ -202,7 +230,12 @@ export const Line = styled.div`
 
 const Content = styled.div<MainProps>`
   position: absolute;
+  top: 120%;
+  /* max-height: ${(props) => (props.scroll === "true" ? "100vh" : "none")}; */
+  overflow-y: ${(props) => (props.scroll === "true" ? "auto" : "hidden")};
+
   top: 110%;
+
   transition: max-height 0.5s ease-in-out;
   @media (min-width: 1025px) {
     top: 120%;
