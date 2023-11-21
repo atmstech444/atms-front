@@ -93,3 +93,9 @@ a {
   display: flex;
   gap: 24px;
 }
+
+@media (min-width: 768px) {
+  .slick-list{
+    width: 100%
+  }
+}

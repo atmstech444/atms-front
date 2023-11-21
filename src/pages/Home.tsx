@@ -1,12 +1,12 @@
 import styled from "styled-components";
 import { useEffect, useRef, useState } from "react";
-
 import SliderComponent from "../components/SliderComponent";
-import SecondSlider from "../components/SecondSlider";
-
 import Design from "../assets/images/design.png";
 import Development from "../assets/images/development.png";
 import Delivery from "../assets/images/delivery.png";
+import SecondSliderMobile from "../components/SecondSliderMobile";
+import SecondSliderDesktop from "../components/SecondSliderDesktop";
+import FirstSliderDesktop from "../components/FirstSliderDesktop";
 
 interface MainProps {
   scroll: string;
@@ -14,6 +14,9 @@ interface MainProps {
 export const Home = () => {
   const [scroll, setScroll] = useState<boolean>(false);
   const contentRef = useRef<HTMLDivElement>(null);
+  const [isMobileScreen, setIsMobileScreen] = useState<boolean>(
+    window.innerWidth <= 768
+  );
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,9 +24,14 @@ export const Home = () => {
       const scrollThreshold = 100;
       setScroll(scrollPosition > scrollThreshold);
     };
+    const handleResize = () => {
+      setIsMobileScreen(window.innerWidth <= 768);
+    };
     window.addEventListener("scroll", handleScroll);
+    window.addEventListener("resize", handleResize);
     return () => {
       window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleResize);
     };
   }, []);
 
@@ -101,11 +109,19 @@ export const Home = () => {
 
 
         <div>
-         <SliderComponent />
+        {isMobileScreen ? (
+          <SliderComponent />
+        ) : (
+          <FirstSliderDesktop />
+        )}
         </div>
 
         <div>
-          <SecondSlider />
+        {isMobileScreen ? (
+          <SecondSliderMobile />
+        ) : (
+          <SecondSliderDesktop />
+        )}
         </div>
 
         <Services>
