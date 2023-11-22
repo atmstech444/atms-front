@@ -8,7 +8,7 @@ import SecondSliderMobile from "../components/SecondSliderMobile";
 import FirstSliderDesktop from "../components/FirstSliderDesktop";
 import Footer from "../components/Footer";
 import SecondSliderDesktop from "../components/SecondSliderDesktop";
-import FirstSliderDesktop from "../components/FirstSliderDesktop";
+// import FirstSliderDesktop from "../components/FirstSliderDesktop";
 import { useNavigate } from "react-router-dom";
 interface MainProps {
   scroll: string;
@@ -16,7 +16,7 @@ interface MainProps {
 export const Home = () => {
   const [scroll, setScroll] = useState<boolean>(false);
   const contentRef = useRef<HTMLDivElement>(null);
-  const [, setIsMobileScreen] = useState<boolean>(window.innerWidth <= 768);
+  // const [, setIsMobileScreen] = useState<boolean>(window.innerWidth <= 768);
   const navigate = useNavigate();
   const [isMobileScreen, setIsMobileScreen] = useState<boolean>(
     window.innerWidth <= 768
