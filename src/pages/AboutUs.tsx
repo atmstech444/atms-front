@@ -64,6 +64,8 @@ export const AboutText = styled.h1`
 
   @media (max-width: 1080px) {
     font-size: 42px;
+    max-width: 1440px;
+    margin: auto;
   }
   @media (max-width: 599px) {
     font-size: 30px;

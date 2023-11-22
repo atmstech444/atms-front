@@ -13,6 +13,7 @@ import Footer from "../components/Footer";
 
 import SecondSliderDesktop from "../components/SecondSliderDesktop";
 import FirstSliderDesktop from "../components/FirstSliderDesktop";
+import { useNavigate } from "react-router-dom";
 
 interface MainProps {
   scroll: string;
@@ -21,6 +22,7 @@ export const Home = () => {
   const [scroll, setScroll] = useState<boolean>(false);
   const contentRef = useRef<HTMLDivElement>(null);
   const [, setIsMobileScreen] = useState<boolean>(window.innerWidth <= 768);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -88,7 +90,7 @@ export const Home = () => {
             education, finance, healthcare, life sciences, hotel/hospitality,
             media and entertainment, and more.
           </AboutLittleText>
-          <Button>Learn more</Button>
+          <Button onClick={() => navigate("/aboutus")}>Learn more</Button>
         </AboutUs>
 
         <Services>
