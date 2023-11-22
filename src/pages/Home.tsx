@@ -1,12 +1,12 @@
 import styled from "styled-components";
 import { useEffect, useRef, useState } from "react";
-import SliderComponent from "../components/SliderComponent";
+// import SliderComponent from "../components/SliderComponent";
 import Design from "../assets/images/design.png";
 import Development from "../assets/images/development.png";
 import Delivery from "../assets/images/delivery.png";
 import Arrow from "../assets/icons/Arrow - Down Circle.svg";
 import Footer from "../components/Footer";
-import SecondSliderMobile from "../components/SecondSliderMobile";
+// import SecondSliderMobile from "../components/SecondSliderMobile";
 import SecondSliderDesktop from "../components/SecondSliderDesktop";
 import FirstSliderDesktop from "../components/FirstSliderDesktop";
 
@@ -16,7 +16,7 @@ interface MainProps {
 export const Home = () => {
   const [scroll, setScroll] = useState<boolean>(false);
   const contentRef = useRef<HTMLDivElement>(null);
-  const [isMobileScreen, setIsMobileScreen] = useState<boolean>(
+  const [, setIsMobileScreen] = useState<boolean>(
     window.innerWidth <= 768
   );
 
