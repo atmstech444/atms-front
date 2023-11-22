@@ -83,14 +83,16 @@ a {
   text-decoration: none;
 }
 
-.slick-list {
+
+.slick-list{
+
   width: 360px;
   margin-top: 100px;
   align-items: center;
   justify-content: center;
   display: flex;
   margin-left: 10px;
-}
+} 
 
 .slick-track {
   display: flex;

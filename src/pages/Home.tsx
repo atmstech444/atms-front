@@ -1,11 +1,16 @@
 import styled from "styled-components";
 import { useEffect, useRef, useState } from "react";
-import SliderComponent from "../components/SliderComponent";
+// import SliderComponent from "../components/SliderComponent";
 import Design from "../assets/images/design.png";
 import Development from "../assets/images/development.png";
 import Delivery from "../assets/images/delivery.png";
 import Arrow from "../assets/icons/Arrow - Down Circle.svg";
+
 import SecondSliderMobile from "../components/SecondSliderMobile";
+
+import Footer from "../components/Footer";
+// import SecondSliderMobile from "../components/SecondSliderMobile";
+
 import SecondSliderDesktop from "../components/SecondSliderDesktop";
 import FirstSliderDesktop from "../components/FirstSliderDesktop";
 import Footer from "../components/Footer";
@@ -16,7 +21,7 @@ interface MainProps {
 export const Home = () => {
   const [scroll, setScroll] = useState<boolean>(false);
   const contentRef = useRef<HTMLDivElement>(null);
-  const [isMobileScreen, setIsMobileScreen] = useState<boolean>(
+  const [, setIsMobileScreen] = useState<boolean>(
     window.innerWidth <= 768
   );
 
@@ -71,25 +76,33 @@ export const Home = () => {
       </div>
 
       <Content ref={contentRef} scroll={scroll.toString()}>
+        <AboutUs>
+          <AboutText>ABOUT US</AboutText>
+          <Line></Line>
+          <AboutLittleText>
+            Our company has ultimate experience building custom software
+            solutions for financial and non financial institutions Established
+            in the year 2000, ATMS (form FNXCo Holding Silver Label) is a global
+            information technology, consulting and outsourcing company. <br />{" "}
+            <br />
+            We have pioneered ourselves in providing end-to-end solutions and
+            services in the areas of information technology, consulting and
+            outsourcing in various segments of industry like agriculture,
+            education, finance, healthcare, life sciences, hotel/hospitality,
+            media and entertainment, and more.
+          </AboutLittleText>
+          <Button>Learn more</Button>
+        </AboutUs>
+
         <div>
-          <AboutUs>
-            <AboutText>ABOUT US</AboutText>
-            <Line></Line>
-            <AboutLittleText>
-              Our company has ultimate experience building custom software
-              solutions for financial and non financial institutions Established
-              in the year 2000, ATMS (form FNXCo Holding Silver Label) is a
-              global information technology, consulting and outsourcing company.{" "}
-              <br /> <br />
-              We have pioneered ourselves in providing end-to-end solutions and
-              services in the areas of information technology, consulting and
-              outsourcing in various segments of industry like agriculture,
-              education, finance, healthcare, life sciences, hotel/hospitality,
-              media and entertainment, and more.
-            </AboutLittleText>
-            <Button>Learn more</Button>
-          </AboutUs>
+          <FirstSliderDesktop />
         </div>
+
+        <div>
+          <SecondSliderDesktop />
+        </div>
+
+
         <Services>
           <RectangleDiv>
             <div>
