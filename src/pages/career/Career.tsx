@@ -19,6 +19,7 @@ import {
   Img,
   Header,
 } from "./Styles";
+import Footer from "../../components/Footer";
 
 const Career = () => {
   const SchemaValidation = yup.object({
@@ -143,6 +144,7 @@ const Career = () => {
           </Form>
         </FormProvider>
       </MainContainer>
+      <Footer />
     </>
   );
 };
