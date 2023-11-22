@@ -242,6 +242,7 @@ width: 360px;
   justify-content: center;
   margin-top: 30px;
   gap: 15px;
+
   @media (min-width: 768px){
     width: 768px;
   }
@@ -293,6 +294,7 @@ const SliderMain = styled.div`
   flex-direction: column;
   justify-content: center;
   margin-top: 30px;
+  overflow-x: hidden;
   @media (min-width: 1440px) {
     width: 1440px;
   }

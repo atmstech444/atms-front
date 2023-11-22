@@ -14,7 +14,7 @@ interface MainProps {
 export const Home = () => {
   const [scroll, setScroll] = useState<boolean>(false);
   const contentRef = useRef<HTMLDivElement>(null);
-  const [, setIsMobileScreen] = useState<boolean>(window.innerWidth <= 768);
+  // const [, setIsMobileScreen] = useState<boolean>(window.innerWidth <= 768);
   const navigate = useNavigate();
 
   useEffect(() => {
