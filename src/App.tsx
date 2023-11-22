@@ -6,6 +6,8 @@ import Career from "./pages/career/Career";
 import Contact from "./pages/Contact";
 import Projects from "./pages/Projects";
 import Services from "./pages/Services";
+import DetailedProject from "./pages/DetailedProject";
+import sliderItems from "../projectsData.json";
 
 function App() {
   const scrollToFooter = () => {
@@ -24,6 +26,10 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/project" element={<Projects />} />
         <Route path="/services" element={<Services />} />
+        <Route
+          path="/detailed/:id"
+          element={<DetailedProject projectsData={sliderItems} />}
+        />
       </Routes>
     </>
   );
