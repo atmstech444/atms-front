@@ -20,30 +20,32 @@ import TaskSoft from "../assets/images/TaskSoft.jpg";
 import BigBossMS from "../assets/images/BigBossMS.jpg";
 import OfficeBox from "../assets/images/OfficeBox.jpg";
 import { useNavigate } from "react-router-dom";
+import { useRef } from "react";
 interface SliderContentProps {
   backgroundColor: string;
 }
 
 const SecondSliderDesktop: React.FC = () => {
   const navigate = useNavigate();
-
+  const sliderRef = useRef<Slider | null>(null);
+  
   const handleArrowClick = (projectId: number) => {
     navigate(`/detailed/${projectId}`);
   };
 
   const settings = {
     dots: false,
-    infinite: true,
+    infinite: false,
     slidesToShow: 4,
     slidesToScroll: 1,
-    autoplay: true,
-    speed: 6000,
-    autoplaySpeed: 6000,
+    autoplay: false,
+    // speed: 6000,
+    // autoplaySpeed: 6000,
     focusOnSelect: false,
-    cssEase: "linear",
+    // cssEase: "linear",
     arrows: false,
     pauseOnHover: false,
-    rtl: true,
+    // rtl: true,
     responsive: [
       {
         breakpoint: 768,
@@ -206,8 +208,10 @@ const SecondSliderDesktop: React.FC = () => {
     },
   ];
   return (
+    <>
+    
     <SliderMain>
-      <Slider {...settings}>
+      <Slider  ref={(slider) => (sliderRef.current = slider)} {...settings}>
         {sliderItems.map((item) => (
           <SliderContent key={item.id} backgroundColor={item.backgroundColor}>
             <SliderItem>
@@ -223,15 +227,72 @@ const SecondSliderDesktop: React.FC = () => {
         ))}
       </Slider>
     </SliderMain>
+
+<ArrowsContainer>
+<PrevArrow onClick={() => sliderRef.current?.slickPrev()}>&lt;</PrevArrow>
+<NextArrow onClick={() => sliderRef.current?.slickNext()}>&gt;</NextArrow>
+</ArrowsContainer>
+</>
   );
 };
+
+const ArrowsContainer = styled.div`
+width: 360px;
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  gap: 15px;
+  @media (min-width: 768px){
+    width: 768px;
+  }
+  @media (min-width: 1024px){
+    width: 1024px;
+  }
+  @media (min-width: 1440px){
+    width: 1440px;
+  }
+  @media (min-width: 1750px){
+    width: 1750px;
+  }
+  @media (min-width: 1900px){
+    width: 1900px;
+  }
+  @media (min-width: 2000px){
+    width: 2000px;
+  }
+`;
+const ArrowButton = styled.div`
+  width: 30px;
+  height: 30px;
+  background-color: #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 18px;
+  color: #333;
+
+  &:hover {
+    background-color: #aaa;
+    color: #fff;
+  }
+`;
+
+const PrevArrow = styled(ArrowButton)`
+  margin-right: 10px;
+`;
+
+const NextArrow = styled(ArrowButton)`
+  margin-left: 10px;
+`;
 
 const SliderMain = styled.div`
   width: 1100px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-top: 100px;
+  margin-top: 30px;
   @media (min-width: 1440px) {
     width: 1440px;
   }

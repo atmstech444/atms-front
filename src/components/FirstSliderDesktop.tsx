@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import Slider from "react-slick";
 import styled from "styled-components";
 import Arrow from "../assets/images/Arrow - Right Circle.png";
@@ -28,19 +28,20 @@ interface SliderContentProps {
 
 const FirstSliderDesktop: React.FC = () => {
   const navigate = useNavigate();
-
+  const sliderRef = useRef<Slider | null>(null);
+  
   const handleArrowClick = (projectId: number) => {
     navigate(`/detailed/${projectId}`);
   };
 
   const settings = {
     dots: false,
-    infinite: true,
+    infinite: false,
     slidesToShow: 4,
     slidesToScroll: 1,
-    autoplay: true,
-    speed: 6000,
-    autoplaySpeed: 6000,
+    autoplay: false,
+    // speed: 6000,
+    // autoplaySpeed: 6000,
     focusOnSelect: false,
     cssEase: "linear",
     arrows: false,
@@ -209,8 +210,9 @@ const FirstSliderDesktop: React.FC = () => {
   ];
 
   return (
+    <>
     <SliderMain>
-      <Slider {...settings}>
+      <Slider ref={(slider) => (sliderRef.current = slider)} {...settings}>
         {sliderItems.map((item) => (
           <SliderContent key={item.id} backgroundColor={item.backgroundColor}>
             <SliderItemContainer>
@@ -226,9 +228,64 @@ const FirstSliderDesktop: React.FC = () => {
         ))}
       </Slider>
     </SliderMain>
+    <ArrowsContainer>
+        <PrevArrow onClick={() => sliderRef.current?.slickPrev()}>&lt;</PrevArrow>
+        <NextArrow onClick={() => sliderRef.current?.slickNext()}>&gt;</NextArrow>
+      </ArrowsContainer>
+    </>
   );
 };
 
+const ArrowsContainer = styled.div`
+width: 360px;
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  gap: 15px;
+  @media (min-width: 768px){
+    width: 768px;
+  }
+  @media (min-width: 1024px){
+    width: 1024px;
+  }
+  @media (min-width: 1440px){
+    width: 1440px;
+  }
+  @media (min-width: 1750px){
+    width: 1750px;
+  }
+  @media (min-width: 1900px){
+    width: 1900px;
+  }
+  @media (min-width: 2000px){
+    width: 2000px;
+  }
+`;
+const ArrowButton = styled.div`
+  width: 30px;
+  height: 30px;
+  background-color: #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 18px;
+  color: #333;
+
+  &:hover {
+    background-color: #aaa;
+    color: #fff;
+  }
+`;
+
+const PrevArrow = styled(ArrowButton)`
+  margin-right: 10px;
+`;
+
+const NextArrow = styled(ArrowButton)`
+  margin-left: 10px;
+`;
 const SliderMain = styled.div`
   width: 1100px;
   display: flex;
