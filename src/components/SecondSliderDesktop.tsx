@@ -15,8 +15,8 @@ export default class SecondSliderDesktop extends Component {
       slidesToShow: 4,
       slidesToScroll: 1,
       autoplay: true,
-      speed: 2000,
-      autoplaySpeed: 2000,
+      speed: 4000,
+      autoplaySpeed: 4000,
       cssEase: "linear",
       rtl: true,
       arrows: false,
@@ -88,7 +88,7 @@ const SliderMain = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-top: 100px;
+    margin-top: 48px;
     @media (min-width: 1440px){ 
         width: 1440px;
     }
