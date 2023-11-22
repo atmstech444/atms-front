@@ -14,6 +14,7 @@ export const CareerText = styled.h1`
   font-style: normal;
   font-weight: 400;
   line-height: 150%;
+  font-family: Bebas Neue;
 
   @media (max-width: 1080px) {
     font-size: 42px;
@@ -34,6 +35,7 @@ export const Paragraph = styled.div`
   height: 70px;
   line-height: 1.3;
   font-size: 20px;
+  font-family: Electrolize;
   @media (min-width: 999px) {
     font-size: 32px;
     max-width: 780px;
@@ -62,6 +64,7 @@ export const SubmitButton = styled.button`
   border: none;
   width: 300px;
   border-radius: 4px;
+  font-family: Electrolize;
   margin: 25px 0;
   color: #fff;
   font-size: 16px;
@@ -133,6 +136,7 @@ export const InputDiv = styled.div`
   flex-direction: column;
   align-items: start;
   gap: 10px;
+  font-family: Electrolize;
 `;
 
 export const Label = styled.label`

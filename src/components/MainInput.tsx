@@ -44,14 +44,11 @@ const Input = styled.input`
   border: none;
   width: 240px;
   border-radius: 4px;
-
   font-family: Electrolize;
-
 
   @media (min-width: 1440px) {
     width: 300px;
   }
-
 `;
 
 export const InputDiv = styled.div`

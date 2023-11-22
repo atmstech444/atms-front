@@ -46,8 +46,7 @@ const AboutUs = () => {
 
 export default AboutUs;
 
-const MainContainer = styled.div`
-  margin-top: 150px;
+export const MainContainer = styled.div`
   padding: 0 180px;
 
   @media (max-width: 899px) {
@@ -55,12 +54,13 @@ const MainContainer = styled.div`
   }
 `;
 
-const AboutText = styled.h1`
+export const AboutText = styled.h1`
   color: #fff;
   font-size: 64px;
   font-style: normal;
   font-weight: 400;
   line-height: 150%;
+  font-family: Bebas Neue;
 
   @media (max-width: 1080px) {
     font-size: 42px;
@@ -70,7 +70,7 @@ const AboutText = styled.h1`
   }
 `;
 
-const Line = styled.div`
+export const Line = styled.div`
   height: 6px;
   background: #120093;
   margin-bottom: 25px;
@@ -83,6 +83,8 @@ const TextDiv = styled.div`
   gap: 15px;
   font-size: 16px;
   align-items: center;
+  font-family: Electrolize;
+  line-height: 1.4;
   @media (min-width: 599px) {
     font-size: 26px;
     gap: 30px;
@@ -113,7 +115,7 @@ const Content = styled.div`
   margin-bottom: 30px;
 `;
 
-const Header = styled.div`
+export const Header = styled.div`
   background-color: #000814;
   padding: 18% 24px 0 24px;
   @media (min-width: 678px) {
