@@ -45,6 +45,20 @@ const FirstSliderDesktop: React.FC = () => {
     cssEase: "linear",
     arrows: false,
     pauseOnHover: false,
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+      {
+        breakpoint: 360,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
   };
 
   const sliderItems = [
@@ -245,10 +259,11 @@ const SliderItemContainer = styled.div`
   width: 300px;
   padding-bottom: 40px;
   margin-left: 20px;
-  height: 394px;
-  @media (min-width: 360px) {
+  height: 330px;
+  margin-top: 20px;
+  /* @media (min-width: 360px) {
     width: 200px;
-  }
+  } */
   @media (min-width: 768px) {
     width: 210px;
   }
@@ -272,7 +287,7 @@ const SliderContent = styled.div<SliderContentProps>`
 const SliderImage = styled.img`
   width: 100%;
   @media (min-width: 360px) {
-    width: 150px;
+    width: 70%;
   }
   @media (min-width: 768px) {
     width: 200px;
