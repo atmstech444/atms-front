@@ -119,7 +119,13 @@ const SliderItem = styled.div`
     width: 210px;
   }
   @media (min-width: 1440px){
-    width: 410px;
+    width: 300px;
+  }
+  @media (min-width: 1750px){
+    width: 340px;
+  }
+  @media (min-width: 1900px){
+    width: 390px;
   }
 `;
 
@@ -138,6 +144,12 @@ const SliderImage = styled.img`
     width: 200px;
   }
   @media (min-width: 1440px){
-    width: 100%;
+    width: 250px;
+  }
+  @media (min-width: 1750px){
+    width: 270px;
+  }
+  @media (min-width: 1900px){
+    width: 300px;
   }
 `;
