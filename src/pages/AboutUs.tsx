@@ -61,12 +61,16 @@ export const AboutText = styled.h1`
   font-weight: 400;
   line-height: 150%;
   font-family: Bebas Neue;
+  padding-left: 230px;
 
   @media (max-width: 1080px) {
     font-size: 42px;
   }
   @media (max-width: 599px) {
     font-size: 30px;
+  }
+  @media (max-width: 1450px) {
+    padding-left: 20px;
   }
 `;
 

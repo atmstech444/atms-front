@@ -1,18 +1,15 @@
 import styled from "styled-components";
 import { useEffect, useRef, useState } from "react";
-// import SliderComponent from "../components/SliderComponent";
 import Design from "../assets/images/design.png";
 import Development from "../assets/images/development.png";
 import Delivery from "../assets/images/delivery.png";
 import Arrow from "../assets/icons/Arrow - Down Circle.svg";
-
 import SecondSliderMobile from "../components/SecondSliderMobile";
-
-import Footer from "../components/Footer";
-// import SecondSliderMobile from "../components/SecondSliderMobile";
-
-import SecondSliderDesktop from "../components/SecondSliderDesktop";
 import FirstSliderDesktop from "../components/FirstSliderDesktop";
+import Footer from "../components/Footer";
+import SecondSliderDesktop from "../components/SecondSliderDesktop";
+import SliderComponent from "../components/SliderComponent";
+
 
 interface MainProps {
   scroll: string;
@@ -20,7 +17,9 @@ interface MainProps {
 export const Home = () => {
   const [scroll, setScroll] = useState<boolean>(false);
   const contentRef = useRef<HTMLDivElement>(null);
-  const [, setIsMobileScreen] = useState<boolean>(window.innerWidth <= 768);
+  const [isMobileScreen, setIsMobileScreen] = useState<boolean>(
+    window.innerWidth <= 768
+  );
 
   useEffect(() => {
     const handleScroll = () => {
@@ -90,7 +89,12 @@ export const Home = () => {
           </AboutLittleText>
           <Button>Learn more</Button>
         </AboutUs>
-
+        <div>
+          <FirstSliderDesktop />
+        </div>
+        <div>
+          <SecondSliderDesktop />
+        </div>
         <Services>
           <RectangleDiv>
             <div>
@@ -107,14 +111,6 @@ export const Home = () => {
             </div>
           </RectangleDiv>
         </Services>
-        <div>
-          <FirstSliderDesktop />
-        </div>
-
-        <div>
-          <SecondSliderDesktop />
-        </div>
-
         <Footer />
       </Content>
     </div>

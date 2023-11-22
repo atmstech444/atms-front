@@ -1,8 +1,18 @@
 import styled from "styled-components";
 
+export const Header = styled.div`
+  background-color: #000814;
+  padding: 18% 24px 0 24px;
+  @media (min-width: 678px) {
+    padding: 10% 24px 0 24px;
+  }
+  @media (min-width: 1024px) {
+    padding: 10% 72px 0 72px;
+  }
+`;
 export const MainContainer = styled.div`
-  padding: 0 70px;
-
+  padding: 0 100px;
+  max-width: 1440px;
   @media (max-width: 599px) {
     padding: 0 25px;
   }
@@ -15,12 +25,19 @@ export const CareerText = styled.h1`
   font-weight: 400;
   line-height: 150%;
   font-family: Bebas Neue;
+  padding-left: 230px;
 
   @media (max-width: 1080px) {
     font-size: 42px;
   }
   @media (max-width: 599px) {
     font-size: 30px;
+  }
+  @media (max-width: 1450px) {
+    padding-left: 20px;
+  }
+  @media (max-width: 1630px) {
+    padding-left: 50px;
   }
 `;
 
@@ -36,9 +53,19 @@ export const Paragraph = styled.div`
   line-height: 1.3;
   font-size: 20px;
   font-family: Electrolize;
-  @media (min-width: 999px) {
+  @media (min-width: 599px) {
+    max-width: 500px;
+  }
+  @media (min-width: 899px) {
     font-size: 32px;
     max-width: 780px;
+    margin-bottom: 50px;
+  }
+  @media (min-width: 1540px) {
+    padding-left: 160px;
+  }
+  @media (min-width: 1799px) {
+    padding-left: 200px;
   }
 `;
 
@@ -89,32 +116,33 @@ export const Form = styled.form`
   @media (min-width: 1080px) {
     align-items: start;
     gap: 15px;
-    padding: 30px 70px;
+    padding: 30px 0;
   }
   @media (min-width: 1280px) {
-    padding: 30px 150px;
+    padding: 30px 80px;
   }
-  @media (min-width: 1599px) {
-    padding: 30px 180px;
+  @media (min-width: 1799px) {
+    padding: 30px 250px;
   }
 `;
 
 export const Img = styled.img`
-  position: absolute;
-  right: -60%;
-  top: -27%;
   display: none;
   @media (min-width: 1080px) {
     display: block;
-    width: 70%;
+    width: 60%;
+    position: absolute;
+    right: -50%;
+    top: -27%;
   }
-  @media (min-width: 1280px) {
-    top: -47%;
+  @media (min-width: 1250px) {
+    top: -35%;
+    right: -60%;
   }
   @media (min-width: 1599px) {
-    right: -80%;
-    width: 75%;
-    top: -70%;
+    right: -70%;
+    top: -50%;
+    width: 70%;
   }
 `;
 
@@ -147,15 +175,4 @@ export const Label = styled.label`
 export const Error = styled.p`
   font-size: 14px;
   color: red;
-`;
-
-export const Header = styled.div`
-  background-color: #000814;
-  padding: 18% 24px 0 24px;
-  @media (min-width: 678px) {
-    padding: 10% 24px 0 24px;
-  }
-  @media (min-width: 1024px) {
-    padding: 10% 72px 0 72px;
-  }
 `;
