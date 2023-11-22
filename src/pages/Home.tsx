@@ -10,6 +10,7 @@ import Footer from "../components/Footer";
 import SecondSliderDesktop from "../components/SecondSliderDesktop";
 import SliderComponent from "../components/SliderComponent";
 
+
 interface MainProps {
   scroll: string;
 }
@@ -88,15 +89,12 @@ export const Home = () => {
           </AboutLittleText>
           <Button>Learn more</Button>
         </AboutUs>
-
         <div>
           <FirstSliderDesktop />
         </div>
-
         <div>
           <SecondSliderDesktop />
         </div>
-
         <Services>
           <RectangleDiv>
             <div>
@@ -113,15 +111,6 @@ export const Home = () => {
             </div>
           </RectangleDiv>
         </Services>
-
-        <div>
-          {isMobileScreen ? <SliderComponent /> : <FirstSliderDesktop />}
-        </div>
-
-        <div>
-          {isMobileScreen ? <SecondSliderMobile /> : <SecondSliderDesktop />}
-        </div>
-
         <Footer />
       </Content>
     </div>
@@ -212,6 +201,8 @@ export const AboutText = styled.h1`
   color: #000814;
   @media (min-width: 1025px) {
     font-size: 64px;
+    max-width: 1440px;
+    margin: auto;
   }
 `;
 const AboutUs = styled.div`

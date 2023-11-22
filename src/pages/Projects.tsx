@@ -78,6 +78,8 @@ const Items = styled.div`
   justify-content: space-around;
   @media (min-width: 1024px) {
     padding: 0 72px;
+    max-width: 1440px;
+    margin: auto;
   }
   div {
     width: 70%;
