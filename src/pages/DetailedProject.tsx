@@ -69,7 +69,7 @@ const Title = styled.p`
   font-family: "Bebas Neue";
   font-weight: 400;
   line-height: 150%;
-  @media (min-width: 1024px) {
+  @media (min-width: 1025px) {
     font-size: 64px;
   }
 `;
@@ -104,9 +104,13 @@ const ProjectImage = styled.img`
     width: 700px;
     height: 420px;
   }
-  @media (min-width: 1024px) {
-    width: 100%;
-    height: 751px;
+  @media (min-width: 1440px) {
+    width: 900px;
+    height: 520px;
+  }
+  @media (min-width: 1900px) {
+    width: 1200px;
+    height: 620px;
   }
 `;
 
