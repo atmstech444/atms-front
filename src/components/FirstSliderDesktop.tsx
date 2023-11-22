@@ -17,8 +17,10 @@ export default class FirstSliderDesktop extends Component {
       autoplay: true,
       speed: 2000,
       autoplaySpeed: 2000,
+      focusOnSelect: false,
       cssEase: "linear",
       arrows: false,
+      pauseOnHover: false
     };
     const sliderItems = [
       {
