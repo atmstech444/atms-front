@@ -47,10 +47,12 @@ const AboutUs = () => {
 export default AboutUs;
 
 export const MainContainer = styled.div`
-  padding: 0 180px;
+  max-width: 1440px;
+  margin: auto;
+  padding: 0 100px;
 
   @media (max-width: 899px) {
-    padding: 0 25px;
+    padding: 0 30px;
   }
 `;
 
@@ -89,6 +91,7 @@ const TextDiv = styled.div`
   align-items: center;
   font-family: Electrolize;
   line-height: 1.4;
+  max-width: 1000px;
   @media (min-width: 599px) {
     font-size: 26px;
     gap: 30px;
