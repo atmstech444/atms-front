@@ -8,9 +8,15 @@ import Projects from "./pages/Projects";
 import Services from "./pages/Services";
 
 function App() {
+  const scrollToFooter = () => {
+    const footerElement = document.getElementById("footer");
+    if (footerElement) {
+      footerElement.scrollIntoView({ behavior: "smooth" });
+    }
+  };
   return (
     <>
-      <Header />
+      <Header scrollToFooter={scrollToFooter} />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/aboutus" element={<AboutUs />} />

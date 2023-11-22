@@ -29,9 +29,7 @@ const MobileHeader = ({
       <Link to="career" onClick={() => handleClick("career")}>
         Career
       </Link>
-      <Link to="contact" onClick={() => handleClick("contact")}>
-        Contact
-      </Link>
+      <Link to="contact">Contact</Link>
     </Main>
   );
 };

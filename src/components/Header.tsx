@@ -12,7 +12,7 @@ interface MainProps {
 export interface Props {
   active: string;
 }
-export const Header = () => {
+export const Header = ({ scrollToFooter }: any) => {
   const [isScrolled, setIsScrolled] = useState<boolean>(false);
   const [isHeaderOpen, setIsHeaderOpen] = useState<boolean>(false);
   const [isActive, setIsActive] = useState<string>("");
@@ -28,6 +28,14 @@ export const Header = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  const handleHeaderClick = () => {
+    // Scroll down the entire page
+    window.scrollTo({
+      top: document.body.scrollHeight, // Scroll to the bottom of the page
+      behavior: "smooth",
+    });
+  };
 
   return (
     <>
@@ -105,15 +113,14 @@ export const Header = () => {
             >
               Career
             </Link>
-            <Link
-              to="contact"
-              style={{
-                color: isScrolled && isActive === "contact" ? "black" : "",
-              }}
-              onClick={() => setIsActive("contact")}
+            <a
+              // style={{
+              //   color: isScrolled && isActive === "contact" ? "black" : "",
+              // }}
+              onClick={scrollToFooter}
             >
               Contact
-            </Link>
+            </a>
           </DesktopHeader>
         </Content>
       </Main>
@@ -134,6 +141,7 @@ const Content = styled.div`
   margin: auto;
   @media (min-width: 1025px) {
     width: 100%;
+    max-width: 1440px;
   }
 `;
 const Logo = styled.img`
@@ -181,6 +189,7 @@ const DesktopHeader = styled.div<Props>`
 const Main = styled.div<MainProps>`
   z-index: 999;
   width: 100%;
+
   justify-content: space-between;
   transition: 0.5s;
   display: flex;

@@ -5,10 +5,10 @@ import Design from "../assets/images/design.png";
 import Development from "../assets/images/development.png";
 import Delivery from "../assets/images/delivery.png";
 import Arrow from "../assets/icons/Arrow - Down Circle.svg";
-import Footer from "../components/Footer";
 import SecondSliderMobile from "../components/SecondSliderMobile";
 import SecondSliderDesktop from "../components/SecondSliderDesktop";
 import FirstSliderDesktop from "../components/FirstSliderDesktop";
+import Footer from "../components/Footer";
 
 interface MainProps {
   scroll: string;
@@ -71,59 +71,50 @@ export const Home = () => {
       </div>
 
       <Content ref={contentRef} scroll={scroll.toString()}>
-        <AboutUs>
-          <AboutText>ABOUT US</AboutText>
-          <Line></Line>
-          <AboutLittleText>
-            Our company has ultimate experience building custom software
-            solutions for financial and non financial institutions Established
-            in the year 2000, ATMS (form FNXCo Holding Silver Label) is a global
-            information technology, consulting and outsourcing company. <br />{" "}
-            <br />
-            We have pioneered ourselves in providing end-to-end solutions and
-            services in the areas of information technology, consulting and
-            outsourcing in various segments of industry like agriculture,
-            education, finance, healthcare, life sciences, hotel/hospitality,
-            media and entertainment, and more.
-          </AboutLittleText>
-          <Button>Learn more</Button>
-        </AboutUs>
-
-
         <div>
-        {isMobileScreen ? (
-          <SliderComponent />
-        ) : (
-          <FirstSliderDesktop />
-        )}
+          <AboutUs>
+            <AboutText>ABOUT US</AboutText>
+            <Line></Line>
+            <AboutLittleText>
+              Our company has ultimate experience building custom software
+              solutions for financial and non financial institutions Established
+              in the year 2000, ATMS (form FNXCo Holding Silver Label) is a
+              global information technology, consulting and outsourcing company.{" "}
+              <br /> <br />
+              We have pioneered ourselves in providing end-to-end solutions and
+              services in the areas of information technology, consulting and
+              outsourcing in various segments of industry like agriculture,
+              education, finance, healthcare, life sciences, hotel/hospitality,
+              media and entertainment, and more.
+            </AboutLittleText>
+            <Button>Learn more</Button>
+          </AboutUs>
         </div>
-
-        <div>
-        {isMobileScreen ? (
-          <SecondSliderMobile />
-        ) : (
-          <SecondSliderDesktop />
-        )}
-        </div>
-
         <Services>
-          <AboutText>SERVICES</AboutText>
-          <Line></Line>
           <RectangleDiv>
             <div>
               <img src={Design} />
-              <p>UI/UX design</p>
+              <p>UI/UX Design</p>
             </div>
             <div>
               <img src={Development} />
-              <p>software development</p>
+              <p>Software Development</p>
             </div>
             <div>
               <img src={Delivery} />
-              <p>managed delivery</p>
+              <p>Managed Delivery</p>
             </div>
           </RectangleDiv>
         </Services>
+
+        <div>
+          {isMobileScreen ? <SliderComponent /> : <FirstSliderDesktop />}
+        </div>
+
+        <div>
+          {isMobileScreen ? <SecondSliderMobile /> : <SecondSliderDesktop />}
+        </div>
+
         <Footer />
       </Content>
     </div>
@@ -140,8 +131,6 @@ const RectangleDiv = styled.div`
   div {
     width: 279px;
     height: 144px;
-    border-radius: 21px;
-    border: 2px solid #bbb;
     margin: auto;
     display: flex;
     justify-content: center;
@@ -174,6 +163,9 @@ const Services = styled.div`
   width: 90%;
   margin: auto;
   margin-top: 126px;
+  @media (min-width: 1025px) {
+    max-width: 1440px;
+  }
 `;
 
 const Button = styled.button`
@@ -218,6 +210,9 @@ export const AboutText = styled.h1`
 const AboutUs = styled.div`
   width: 90%;
   margin: auto;
+  @media (min-width: 1025px) {
+    max-width: 1440px;
+  }
 `;
 export const Line = styled.div`
   height: 6px;
@@ -230,15 +225,12 @@ export const Line = styled.div`
 
 const Content = styled.div<MainProps>`
   position: absolute;
-  top: 120%;
-  /* max-height: ${(props) => (props.scroll === "true" ? "100vh" : "none")}; */
   overflow-y: ${(props) => (props.scroll === "true" ? "auto" : "hidden")};
-
   top: 110%;
-
   transition: max-height 0.5s ease-in-out;
   @media (min-width: 1025px) {
     top: 120%;
+    width: 100%;
   }
 `;
 

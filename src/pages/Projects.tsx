@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { AboutText, Line } from "./Home";
 import Project from "../assets/images/project.png";
 import Arrow from "../assets/icons/Arrow - Right Circle.svg";
+import Footer from "../components/Footer";
 const data = [
   {
     name: "Gpi holding",
@@ -65,6 +66,7 @@ export default function Projects() {
           </div>
         ))}
       </Items>
+      <Footer />
     </Main>
   );
 }
@@ -107,6 +109,6 @@ const Container = styled.div`
     padding: 10% 24px 0 24px;
   }
   @media (min-width: 1024px) {
-    padding: 10% 72px 0 72px;
+    padding: 18% 72px 0 72px;
   }
 `;
