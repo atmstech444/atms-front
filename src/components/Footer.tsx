@@ -5,10 +5,22 @@ import Location from "../assets/icons/Location.svg";
 import Email from "../assets/icons/Call.svg";
 import { Label } from "./MainInput";
 import LogoWhite from "../assets/images/logoWhite.png";
+import { useState } from "react";
+import axios from "axios";
 
 export default function Footer() {
+  const [data, setData] = useState({ name: "", email: "", message: "" });
+  console.log(data);
+  const onSubmit = async () => {
+    try {
+      const response = await axios.post("https://atms.ge/contact.php", data);
+      console.log(response);
+    } catch (error) {
+      console.error(error);
+    }
+  };
   return (
-    <footer id="footer">
+    <footer id="footer" style={{ backgroundColor: "white" }}>
       <Main>
         <AboutText>Contact us</AboutText>
         <Line></Line>
@@ -32,18 +44,27 @@ export default function Footer() {
             <NameEmail>
               <InputDiv>
                 <Label>Name</Label>
-                <input placeholder="Name" />
+                <input
+                  placeholder="Name"
+                  onChange={(e) => setData({ ...data, name: e.target.value })}
+                />
               </InputDiv>
               <InputDiv>
                 <Label>Email</Label>
-                <input placeholder="Email" />
+                <input
+                  placeholder="Email"
+                  onChange={(e) => setData({ ...data, email: e.target.value })}
+                />
               </InputDiv>
             </NameEmail>
             <MessageText>
               <Label>Message</Label>
-              <Input placeholder="Write your message..." />
+              <Input
+                placeholder="Write your message..."
+                onChange={(e) => setData({ ...data, message: e.target.value })}
+              />
             </MessageText>
-            <SubmitButton>Submit</SubmitButton>
+            <SubmitButton onClick={onSubmit}>Submit</SubmitButton>
           </Contact>
         </Div>
       </Main>

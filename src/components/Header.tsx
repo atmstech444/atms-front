@@ -29,14 +29,6 @@ export const Header = ({ scrollToFooter }: any) => {
     };
   }, []);
 
-  const handleHeaderClick = () => {
-    // Scroll down the entire page
-    window.scrollTo({
-      top: document.body.scrollHeight, // Scroll to the bottom of the page
-      behavior: "smooth",
-    });
-  };
-
   return (
     <>
       <Main isscrolled={isScrolled.toString()}>
@@ -113,14 +105,7 @@ export const Header = ({ scrollToFooter }: any) => {
             >
               Career
             </Link>
-            <a
-              // style={{
-              //   color: isScrolled && isActive === "contact" ? "black" : "",
-              // }}
-              onClick={scrollToFooter}
-            >
-              Contact
-            </a>
+            <a onClick={scrollToFooter}>Contact</a>
           </DesktopHeader>
         </Content>
       </Main>

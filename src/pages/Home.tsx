@@ -8,15 +8,16 @@ import SecondSliderMobile from "../components/SecondSliderMobile";
 import FirstSliderDesktop from "../components/FirstSliderDesktop";
 import Footer from "../components/Footer";
 import SecondSliderDesktop from "../components/SecondSliderDesktop";
-import SliderComponent from "../components/SliderComponent";
-
-
+import FirstSliderDesktop from "../components/FirstSliderDesktop";
+import { useNavigate } from "react-router-dom";
 interface MainProps {
   scroll: string;
 }
 export const Home = () => {
   const [scroll, setScroll] = useState<boolean>(false);
   const contentRef = useRef<HTMLDivElement>(null);
+  const [, setIsMobileScreen] = useState<boolean>(window.innerWidth <= 768);
+  const navigate = useNavigate();
   const [isMobileScreen, setIsMobileScreen] = useState<boolean>(
     window.innerWidth <= 768
   );
@@ -87,14 +88,9 @@ export const Home = () => {
             education, finance, healthcare, life sciences, hotel/hospitality,
             media and entertainment, and more.
           </AboutLittleText>
-          <Button>Learn more</Button>
+          <Button onClick={() => navigate("/aboutus")}>Learn more</Button>
         </AboutUs>
-        <div>
-          <FirstSliderDesktop />
-        </div>
-        <div>
-          <SecondSliderDesktop />
-        </div>
+       
         <Services>
           <RectangleDiv>
             <div>
@@ -111,6 +107,12 @@ export const Home = () => {
             </div>
           </RectangleDiv>
         </Services>
+         <div>
+          <FirstSliderDesktop />
+        </div>
+        <div>
+          <SecondSliderDesktop />
+        </div>
         <Footer />
       </Content>
     </div>
