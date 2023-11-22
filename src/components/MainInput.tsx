@@ -67,4 +67,5 @@ export const Label = styled.label`
 const Error = styled.p`
   font-size: 14px;
   color: red;
+  font-family: Electrolize;
 `;

@@ -20,6 +20,7 @@ import {
   Header,
 } from "./Styles";
 import Footer from "../../components/Footer";
+import Swal from "sweetalert2";
 
 const Career = () => {
   const SchemaValidation = yup.object({
@@ -77,6 +78,19 @@ const Career = () => {
       );
       if (response.status === 200) {
         reset();
+        Swal.fire({
+          icon: "success",
+          title: "Your form is submitted!",
+          showConfirmButton: true,
+          timer: 1500,
+        });
+      } else {
+        Swal.fire({
+          icon: "warning",
+          title: "Try again!",
+          showConfirmButton: false,
+          timer: 1500,
+        });
       }
       return response;
     } catch (error) {
