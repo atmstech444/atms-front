@@ -1,56 +1,12 @@
 import styled from "styled-components";
 import { AboutText, Line } from "./Home";
-import Project from "../assets/images/project.png";
 import Arrow from "../assets/icons/Arrow - Right Circle.svg";
 import Footer from "../components/Footer";
-const data = [
-  {
-    name: "Gpi holding",
-    image: Project,
-    color: "#C3BFE4",
-  },
-  {
-    name: "Gpi holding",
-    image: Project,
-    color: "#BFD4E4",
-  },
-  {
-    name: "Gpi holding",
-    image: Project,
-    color: "#E3BFE4",
-  },
-  {
-    name: "Gpi holding",
-    image: Project,
-    color: "#BFE4D2",
-  },
-  {
-    name: "Gpi holding",
-    image: Project,
-    color: "#C3BFE4",
-  },
-  {
-    name: "Gpi holding",
-    image: Project,
-    color: "#BFD4E4",
-  },
-  {
-    name: "Gpi holding",
-    image: Project,
-    color: "#E3BFE4",
-  },
-  {
-    name: "Gpi holding",
-    image: Project,
-    color: "#BFE4D2",
-  },
-  {
-    name: "Gpi holding",
-    image: Project,
-    color: "#BFE4D2",
-  },
-];
+import data from "../../projectsData.json";
+import { useNavigate } from "react-router-dom";
+
 export default function Projects() {
+  const navigate = useNavigate();
   return (
     <Main>
       <Container>
@@ -59,8 +15,12 @@ export default function Projects() {
       </Container>
       <Items>
         {data.map((item) => (
-          <div style={{ backgroundColor: item.color }}>
-            <h1>{item.name}</h1>
+          <div
+            key={item.id}
+            style={{ backgroundColor: item.backgroundColor }}
+            onClick={() => navigate(`/detailed/${item.id}`)}
+          >
+            <h1>{item.title}</h1>
             <Image src={item.image} />
             <img style={{ width: "8%" }} src={Arrow} />
           </div>

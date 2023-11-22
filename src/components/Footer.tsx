@@ -10,7 +10,6 @@ import axios from "axios";
 
 export default function Footer() {
   const [data, setData] = useState({ name: "", email: "", message: "" });
-  console.log(data);
   const onSubmit = async () => {
     try {
       const response = await axios.post("https://atms.ge/contact.php", data);
