@@ -4,11 +4,9 @@ import Design from "../assets/images/design.png";
 import Development from "../assets/images/development.png";
 import Delivery from "../assets/images/delivery.png";
 import Arrow from "../assets/icons/Arrow - Down Circle.svg";
-import SecondSliderMobile from "../components/SecondSliderMobile";
 import FirstSliderDesktop from "../components/FirstSliderDesktop";
 import Footer from "../components/Footer";
 import SecondSliderDesktop from "../components/SecondSliderDesktop";
-import FirstSliderDesktop from "../components/FirstSliderDesktop";
 import { useNavigate } from "react-router-dom";
 interface MainProps {
   scroll: string;
@@ -18,9 +16,6 @@ export const Home = () => {
   const contentRef = useRef<HTMLDivElement>(null);
   const [, setIsMobileScreen] = useState<boolean>(window.innerWidth <= 768);
   const navigate = useNavigate();
-  const [isMobileScreen, setIsMobileScreen] = useState<boolean>(
-    window.innerWidth <= 768
-  );
 
   useEffect(() => {
     const handleScroll = () => {
@@ -90,7 +85,7 @@ export const Home = () => {
           </AboutLittleText>
           <Button onClick={() => navigate("/aboutus")}>Learn more</Button>
         </AboutUs>
-       
+
         <Services>
           <RectangleDiv>
             <div>
@@ -107,7 +102,7 @@ export const Home = () => {
             </div>
           </RectangleDiv>
         </Services>
-         <div>
+        <div>
           <FirstSliderDesktop />
         </div>
         <div>
