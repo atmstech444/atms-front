@@ -19,7 +19,8 @@ export default class SecondSliderDesktop extends Component {
       autoplaySpeed: 2000,
       cssEase: "linear",
       rtl: true,
-      arrows: false
+      arrows: false,
+      pauseOnHover: false
     };
     const sliderItems = [
       {
