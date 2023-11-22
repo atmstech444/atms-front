@@ -13,7 +13,6 @@ import Footer from "../components/Footer";
 
 import SecondSliderDesktop from "../components/SecondSliderDesktop";
 import FirstSliderDesktop from "../components/FirstSliderDesktop";
-import Footer from "../components/Footer";
 
 interface MainProps {
   scroll: string;
@@ -21,9 +20,7 @@ interface MainProps {
 export const Home = () => {
   const [scroll, setScroll] = useState<boolean>(false);
   const contentRef = useRef<HTMLDivElement>(null);
-  const [, setIsMobileScreen] = useState<boolean>(
-    window.innerWidth <= 768
-  );
+  const [, setIsMobileScreen] = useState<boolean>(window.innerWidth <= 768);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -94,15 +91,6 @@ export const Home = () => {
           <Button>Learn more</Button>
         </AboutUs>
 
-        <div>
-          <FirstSliderDesktop />
-        </div>
-
-        <div>
-          <SecondSliderDesktop />
-        </div>
-
-
         <Services>
           <RectangleDiv>
             <div>
@@ -119,13 +107,12 @@ export const Home = () => {
             </div>
           </RectangleDiv>
         </Services>
-
         <div>
-          {isMobileScreen ? <SliderComponent /> : <FirstSliderDesktop />}
+          <FirstSliderDesktop />
         </div>
 
         <div>
-          {isMobileScreen ? <SecondSliderMobile /> : <SecondSliderDesktop />}
+          <SecondSliderDesktop />
         </div>
 
         <Footer />
@@ -218,6 +205,8 @@ export const AboutText = styled.h1`
   color: #000814;
   @media (min-width: 1025px) {
     font-size: 64px;
+    max-width: 1440px;
+    margin: auto;
   }
 `;
 const AboutUs = styled.div`
