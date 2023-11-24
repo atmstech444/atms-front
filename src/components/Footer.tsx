@@ -7,14 +7,28 @@ import { Label } from "./MainInput";
 import LogoWhite from "../assets/images/logoWhite.png";
 import { useState } from "react";
 import axios from "axios";
+import Swal from "sweetalert2";
 
 export default function Footer() {
   const [data, setData] = useState({ name: "", email: "", message: "" });
   const onSubmit = async () => {
     try {
       const response = await axios.post("https://atms.ge/contact.php", data);
+      Swal.fire({
+        icon: "success",
+        title: "Your form is submitted!",
+        showConfirmButton: true,
+        timer: 1500,
+      });
+      setData({ name: "", email: "", message: "" });
       console.log(response);
     } catch (error) {
+      Swal.fire({
+        icon: "warning",
+        title: "Try again!",
+        showConfirmButton: false,
+        timer: 1500,
+      });
       console.error(error);
     }
   };

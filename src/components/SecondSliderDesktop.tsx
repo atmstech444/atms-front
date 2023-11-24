@@ -28,7 +28,7 @@ interface SliderContentProps {
 const SecondSliderDesktop: React.FC = () => {
   const navigate = useNavigate();
   const sliderRef = useRef<Slider | null>(null);
-  
+
   const handleArrowClick = (projectId: number) => {
     navigate(`/detailed/${projectId}`);
   };
@@ -209,56 +209,60 @@ const SecondSliderDesktop: React.FC = () => {
   ];
   return (
     <>
-    
-    <SliderMain>
-      <Slider  ref={(slider) => (sliderRef.current = slider)} {...settings}>
-        {sliderItems.map((item) => (
-          <SliderContent key={item.id} backgroundColor={item.backgroundColor}>
-            <SliderItem>
-              <h2>{item.title}</h2>
-              <SliderImage src={item.image} alt={item.title} />
-              <Description>{item.description}</Description>
-              <ArrowIcon
-                src={Arrow}
-                onClick={() => handleArrowClick(item.id)}
-              />
-            </SliderItem>
-          </SliderContent>
-        ))}
-      </Slider>
-    </SliderMain>
+      <SliderMain>
+        <Slider ref={(slider) => (sliderRef.current = slider)} {...settings}>
+          {sliderItems.map((item) => (
+            <SliderContent
+              key={item.id}
+              backgroundColor={item.backgroundColor}
+              onClick={() => handleArrowClick(item.id)}
+            >
+              <SliderItem>
+                <h2>{item.title}</h2>
+                <SliderImage src={item.image} alt={item.title} />
+                <Description>{item.description}</Description>
+                <ArrowIcon src={Arrow} />
+              </SliderItem>
+            </SliderContent>
+          ))}
+        </Slider>
+      </SliderMain>
 
-<ArrowsContainer>
-<PrevArrow onClick={() => sliderRef.current?.slickPrev()}>&lt;</PrevArrow>
-<NextArrow onClick={() => sliderRef.current?.slickNext()}>&gt;</NextArrow>
-</ArrowsContainer>
-</>
+      <ArrowsContainer>
+        <PrevArrow onClick={() => sliderRef.current?.slickPrev()}>
+          &lt;
+        </PrevArrow>
+        <NextArrow onClick={() => sliderRef.current?.slickNext()}>
+          &gt;
+        </NextArrow>
+      </ArrowsContainer>
+    </>
   );
 };
 
 const ArrowsContainer = styled.div`
-width: 360px;
+  width: 360px;
   display: flex;
   justify-content: center;
   margin-top: 30px;
   gap: 15px;
 
-  @media (min-width: 768px){
+  @media (min-width: 768px) {
     width: 768px;
   }
-  @media (min-width: 1024px){
+  @media (min-width: 1024px) {
     width: 1024px;
   }
-  @media (min-width: 1440px){
+  @media (min-width: 1440px) {
     width: 1440px;
   }
-  @media (min-width: 1750px){
+  @media (min-width: 1750px) {
     width: 1750px;
   }
-  @media (min-width: 1900px){
+  @media (min-width: 1900px) {
     width: 1900px;
   }
-  @media (min-width: 2000px){
+  @media (min-width: 2000px) {
     width: 2000px;
   }
 `;
@@ -342,6 +346,9 @@ const SliderContent = styled.div<SliderContentProps>`
   display: flex;
   gap: 20px;
   background-color: ${(props) => props.backgroundColor};
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 const SliderImage = styled.img`

@@ -23,14 +23,14 @@ export const Home = () => {
       const scrollThreshold = 100;
       setScroll(scrollPosition > scrollThreshold);
     };
-    const handleResize = () => {
-      setIsMobileScreen(window.innerWidth <= 768);
-    };
+    // const handleResize = () => {
+    //   setIsMobileScreen(window.innerWidth <= 768);
+    // };
     window.addEventListener("scroll", handleScroll);
-    window.addEventListener("resize", handleResize);
+    // window.addEventListener("resize", handleResize);
     return () => {
       window.removeEventListener("scroll", handleScroll);
-      window.removeEventListener("resize", handleResize);
+      // window.removeEventListener("resize", handleResize);
     };
   }, []);
 
