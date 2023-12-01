@@ -18,23 +18,27 @@ export const Header = ({ scrollToFooter }: any) => {
   const [isActive, setIsActive] = useState<string>("");
 
   useEffect(() => {
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY;
-      const scrollThreshold = 100;
-      setIsScrolled(scrollPosition > scrollThreshold);
-    };
+    handleScroll();
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+  const handleScroll = () => {
+    const scrollPosition = window.scrollY;
+    const scrollThreshold = 100;
+    setIsScrolled(scrollPosition > scrollThreshold);
+  };
 
   return (
     <>
       <Main isscrolled={isScrolled.toString()}>
         <Content>
           <Link to="/" onClick={() => setIsActive("")}>
-            <Logo src={isScrolled ? LogoImage : LogoWhite} />
+            <Logo
+              src={isScrolled ? LogoImage : LogoWhite}
+              onClick={() => setIsHeaderOpen(false)}
+            />
           </Link>
           <ImgContainer onClick={() => setIsHeaderOpen(!isHeaderOpen)}>
             {isScrolled ? (
@@ -105,7 +109,14 @@ export const Header = ({ scrollToFooter }: any) => {
             >
               Career
             </Link>
-            <a onClick={scrollToFooter}>Contact</a>
+            <a
+              onClick={() => {
+                scrollToFooter();
+                setIsHeaderOpen(false);
+              }}
+            >
+              Contact
+            </a>
           </DesktopHeader>
         </Content>
       </Main>
@@ -114,6 +125,8 @@ export const Header = ({ scrollToFooter }: any) => {
           active={isActive}
           setIsActive={setIsActive}
           setIsHeaderOpen={setIsHeaderOpen}
+          handleScroll={handleScroll}
+          scrollToFooter={scrollToFooter}
         />
       )}
     </>

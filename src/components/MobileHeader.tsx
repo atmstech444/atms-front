@@ -1,20 +1,33 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { Props } from "./Header";
+import { useEffect } from "react";
 
 const MobileHeader = ({
   active,
   setIsActive,
   setIsHeaderOpen,
+  handleScroll,
+  scrollToFooter,
 }: {
   active: string;
   setIsActive: React.Dispatch<React.SetStateAction<string>>;
   setIsHeaderOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  handleScroll: any;
+  scrollToFooter: any;
 }) => {
   const handleClick = (name: string) => {
     setIsActive(name);
     setIsHeaderOpen(false);
   };
+
+  useEffect(() => {
+    handleScroll();
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
   return (
     <Main active={active}>
       <Link to="services" onClick={() => handleClick("services")}>
@@ -29,7 +42,14 @@ const MobileHeader = ({
       <Link to="career" onClick={() => handleClick("career")}>
         Career
       </Link>
-      <Link to="contact">Contact</Link>
+      <a
+        onClick={() => {
+          scrollToFooter();
+          setIsHeaderOpen(false);
+        }}
+      >
+        Contact
+      </a>
     </Main>
   );
 };

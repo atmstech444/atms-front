@@ -7,14 +7,28 @@ import { Label } from "./MainInput";
 import LogoWhite from "../assets/images/logoWhite.png";
 import { useState } from "react";
 import axios from "axios";
+import Swal from "sweetalert2";
 
 export default function Footer() {
   const [data, setData] = useState({ name: "", email: "", message: "" });
   const onSubmit = async () => {
     try {
       const response = await axios.post("https://atms.ge/contact.php", data);
+      Swal.fire({
+        icon: "success",
+        title: "Your form is submitted!",
+        showConfirmButton: true,
+        timer: 1500,
+      });
+      setData({ name: "", email: "", message: "" });
       console.log(response);
     } catch (error) {
+      Swal.fire({
+        icon: "warning",
+        title: "Try again!",
+        showConfirmButton: false,
+        timer: 1500,
+      });
       console.error(error);
     }
   };
@@ -42,15 +56,17 @@ export default function Footer() {
           <Contact>
             <NameEmail>
               <InputDiv>
-                <Label>Name</Label>
+                <Label>Full Name</Label>
                 <input
-                  placeholder="Name"
+                  name="name"
+                  placeholder="Full Name"
                   onChange={(e) => setData({ ...data, name: e.target.value })}
                 />
               </InputDiv>
               <InputDiv>
                 <Label>Email</Label>
                 <input
+                  name="email"
                   placeholder="Email"
                   onChange={(e) => setData({ ...data, email: e.target.value })}
                 />
@@ -59,6 +75,7 @@ export default function Footer() {
             <MessageText>
               <Label>Message</Label>
               <Input
+                name="message"
                 placeholder="Write your message..."
                 onChange={(e) => setData({ ...data, message: e.target.value })}
               />
@@ -94,7 +111,8 @@ export default function Footer() {
 
 const GreyDiv = styled.div`
   display: flex;
-  padding: 20px 72px;
+  padding: 20px 0;
+
   flex-direction: column;
   gap: 25px;
   justify-content: space-between;
@@ -105,9 +123,9 @@ const GreyDiv = styled.div`
     max-width: 1440px;
   }
 `;
+
 const Grey = styled.div`
   background-color: #333943;
-
   @media (min-width: 1080px) {
     flex-direction: row;
   }

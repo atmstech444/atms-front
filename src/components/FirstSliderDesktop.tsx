@@ -29,7 +29,7 @@ interface SliderContentProps {
 const FirstSliderDesktop: React.FC = () => {
   const navigate = useNavigate();
   const sliderRef = useRef<Slider | null>(null);
-  
+
   const handleArrowClick = (projectId: number) => {
     navigate(`/detailed/${projectId}`);
   };
@@ -67,7 +67,7 @@ const FirstSliderDesktop: React.FC = () => {
       id: 1,
       title: "Yoga Club",
       image: `${YogaPicture}`,
-      backgroundColor: "#C3BFE4",
+      backgroundColor: "rgb(51, 57, 67)",
       description:
         "Software for managing a spa/fitness/yoga center. Managing abonements, customer visits, regular classes, schedules and a built-in caffee. Individual visits, group visits, duration sales and unlimited sales",
     },
@@ -75,7 +75,7 @@ const FirstSliderDesktop: React.FC = () => {
       id: 2,
       title: "Hospital ERP",
       image: `${HospitalMS}`,
-      backgroundColor: "#BFD4E4",
+      backgroundColor: "rgb(51, 57, 67)",
       description:
         "Software for managing a network of hospitals. Medicines, ambulatory and hospital visits services and calculations, medical staff attendance and work outs.",
     },
@@ -123,7 +123,7 @@ const FirstSliderDesktop: React.FC = () => {
       id: 8,
       title: "Document Flow",
       image: `${DocumentFlow}`,
-      backgroundColor: "#BFE4D2",
+      backgroundColor: "rgb(51, 57, 67)",
       description:
         "Software for automation of sending/approving and editing official documents brought to the office printed on paper. Electronization, versioning and archieving of documents.",
     },
@@ -211,54 +211,59 @@ const FirstSliderDesktop: React.FC = () => {
 
   return (
     <>
-    <SliderMain>
-      <Slider ref={(slider) => (sliderRef.current = slider)} {...settings}>
-        {sliderItems.map((item) => (
-          <SliderContent key={item.id} backgroundColor={item.backgroundColor}>
-            <SliderItemContainer>
-              <h2>{item.title}</h2>
-              <SliderImage src={item.image} alt={item.title} />
-              <Description>{item.description}</Description>
-              <ArrowIcon
-                src={Arrow}
-                onClick={() => handleArrowClick(item.id)}
-              />
-            </SliderItemContainer>
-          </SliderContent>
-        ))}
-      </Slider>
-    </SliderMain>
-    <ArrowsContainer>
-        <PrevArrow onClick={() => sliderRef.current?.slickPrev()}>&lt;</PrevArrow>
-        <NextArrow onClick={() => sliderRef.current?.slickNext()}>&gt;</NextArrow>
+      <SliderMain>
+        <Slider ref={(slider) => (sliderRef.current = slider)} {...settings}>
+          {sliderItems.map((item) => (
+            <SliderContent
+              key={item.id}
+              backgroundColor={item.backgroundColor}
+              onClick={() => handleArrowClick(item.id)}
+            >
+              <SliderItemContainer>
+                <h2>{item.title}</h2>
+                <SliderImage src={item.image} alt={item.title} />
+                <Description>{item.description}</Description>
+                <ArrowIcon src={Arrow} />
+              </SliderItemContainer>
+            </SliderContent>
+          ))}
+        </Slider>
+      </SliderMain>
+      <ArrowsContainer>
+        <PrevArrow onClick={() => sliderRef.current?.slickPrev()}>
+          &lt;
+        </PrevArrow>
+        <NextArrow onClick={() => sliderRef.current?.slickNext()}>
+          &gt;
+        </NextArrow>
       </ArrowsContainer>
     </>
   );
 };
 
 const ArrowsContainer = styled.div`
-width: 360px;
+  width: 360px;
   display: flex;
   justify-content: center;
   margin-top: 30px;
   gap: 15px;
 
-  @media (min-width: 768px){
+  @media (min-width: 768px) {
     width: 768px;
   }
-  @media (min-width: 1024px){
+  @media (min-width: 1024px) {
     width: 1024px;
   }
-  @media (min-width: 1440px){
+  @media (min-width: 1440px) {
     width: 1440px;
   }
-  @media (min-width: 1750px){
+  @media (min-width: 1750px) {
     width: 1750px;
   }
-  @media (min-width: 1900px){
+  @media (min-width: 1900px) {
     width: 1900px;
   }
-  @media (min-width: 2000px){
+  @media (min-width: 2000px) {
     width: 2000px;
   }
 `;
@@ -288,12 +293,15 @@ const NextArrow = styled(ArrowButton)`
   margin-left: 10px;
 `;
 const SliderMain = styled.div`
-  width: 1100px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   margin-top: 100px;
   overflow-x: hidden;
+  @media (min-width: 768px) {
+    width: 1000px;
+  }
   @media (min-width: 1440px) {
     width: 1440px;
   }
@@ -341,6 +349,9 @@ const SliderContent = styled.div<SliderContentProps>`
   display: flex;
   gap: 20px;
   background-color: ${(props) => props.backgroundColor};
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 const SliderImage = styled.img`

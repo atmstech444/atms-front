@@ -6,6 +6,7 @@ import img3 from "../assets/images/img3.png";
 import img1deskt from "../assets/images/img1deskt.png";
 import img2deskt from "../assets/images/img2deskt.png";
 import img3deskt from "../assets/images/img3deskt.png";
+import Footer from "../components/Footer";
 
 const Services = () => {
   return (
@@ -17,8 +18,8 @@ const Services = () => {
       <MainContainer>
         <GridContainer>
           <GridItem>
-            <MobileImg src={img1} alt="img1" />
-            <DesktopImg src={img1deskt} alt="img1" />
+            <MobileImg src={img3} alt="img1" />
+            <DesktopImg src={img3deskt} alt="img1" />
             <Content>
               <p>UI/UX Design:</p>
               <div>
@@ -51,8 +52,8 @@ const Services = () => {
             </Content>
           </GridItem>
           <GridItem>
-            <MobileImg src={img3} alt="img3" />
-            <DesktopImg src={img3deskt} alt="img3" />
+            <MobileImg src={img1} alt="img3" />
+            <DesktopImg src={img1deskt} alt="img3" />
             <Content>
               <p>Managed Delivery:</p>
               <div>
@@ -70,6 +71,7 @@ const Services = () => {
           </GridItem>
         </GridContainer>
       </MainContainer>
+      <Footer />
     </>
   );
 };

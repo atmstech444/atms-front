@@ -3,20 +3,21 @@ import { useNavigate, useParams } from "react-router-dom";
 import styled from "styled-components";
 import { AboutText, Line } from "./Home";
 import Arrow from "../assets/images/Arrow - Right 1.png";
+import projectsData from "../../projectsData.json";
 
-interface Project {
-  id: number;
-  title: string;
-  image: string;
-  backgroundColor: string;
-  description: string;
-}
+// interface Project {
+//   id: number;
+//   title: string;
+//   image: string;
+//   backgroundColor: string;
+//   description: string;
+// }
 
-interface DetailedProjectProps {
-  projectsData: Project[];
-}
+// interface DetailedProjectProps {
+//   projectsData: Project[];
+// }
 
-const DetailedProject: React.FC<DetailedProjectProps> = ({ projectsData }) => {
+const DetailedProject: React.FC<any> = () => {
   const { id } = useParams();
   const navigate = useNavigate();
 
@@ -85,13 +86,12 @@ const ItemsContainer = styled.div`
   padding-bottom: 112px;
   line-height: 150%;
   font-family: "Electrolize";
-  @media (min-width: 1440px){
+  @media (min-width: 1440px) {
     font-size: 32px;
     gap: 32px;
     padding-left: 72px;
-  padding-right: 72px;
+    padding-right: 72px;
   }
-  
 `;
 
 const ProjectImage = styled.img`

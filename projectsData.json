@@ -2,127 +2,127 @@
   {
     "id": 1,
     "title": "Yoga Club",
-    "image": "/src/assets/images/YogaPciture.png",
-    "backgroundColor": "#C3BFE4",
+    "image": "/YogaPciture.png",
+    "backgroundColor": "rgb(224 220 243)",
     "description": "Yoga clubs are very popular nowadays. Each of them has different specifics, so making a software to satisfy most of them has been a little challenge for us. FNXCo Holding Silver Label has developed a unified solution for Yoga Clubs flexible enough to manage all the possible ways of providing service to people. Here we are going to describe just one example of yoga club services (Yoga Club 'Ananda'):\n- Registered classes and teachers/mentors which lead those classes\n- Registered club cards and discount cards for club marketing and sales\n- Each person, who buys a monthly attendance card is assigned to some group or attends classes individually and has a schedule generated\n- All the visits are logged (there also could be attached polls to each class)\n- Mini-accounting and local expenses management system built-in for club administration\n- Mini market system is built-in for the bar owned by the club"
   },
   {
     "id": 2,
     "title": "Hospital ERP",
-    "image": "/src/assets/images/HospitalMS.jpg",
-    "backgroundColor": "#BFD4E4",
+    "image": "/HospitalMS.jpg",
+    "backgroundColor": "rgb(224 220 243)",
     "description": "There has been created a software to manage networks of hospitals. Here we want to describe the registration module, main features of which are:\nServices management module (administrative):\nServices are categorized in a tree-like structure based on medical principles\nIn any service, there are specified positions and quantities of participants of any operation and percentages or fixed amounts of bonuses which they should receive for the service\nExpected amounts of profit the hospital wants to get from any service\nVisit/operation case registration and calculation by registration board:\nAny services provided by hospitals are considered to be templates, which means that they can be customized while providing them to actual patients. For example, each case may require additional ambulatory or laboratory parameters to be considered or additional services to be provided in the scope of any operation. Those additions/changes are applied and affect price calculation for the patient\nFees: bonuses, fixed salaries and duties scheduling:\nHospital staff (based on the contract) gets a combined salary, which consists of: fixed part, bonuses based on their participation in operations and fixed daily fees based on duties schedule"
   },
   {
     "id": 3,
     "title": "Tour MS",
-    "image": "/src/assets/images/TourMS.jpg",
-    "backgroundColor": "#E3BFE4",
+    "image": "/TourMS.jpg",
+    "backgroundColor": "rgb(224 220 243)",
     "description": "Tours MS is a software created for VisitGeorgia (visitgeorgia.ge, leading travel agency in Georgia oriented to in-tours). The software lets travel agencies minimize mistakes or their operators as almost all the processes of tour creation, monitoring, and processing are automated. Software also:\nSupports travel agencies having several affiliates\nGenerates tour names based on some parameters of the tour\nCalculates estimated amounts of water and other resources\nLets operators/administration specify real quantitative and financial parameters used in the tour\nLets operators/administration add formatted comments and descriptions\nLets operators/administration specify vehicles/transportation items rent for the tour (+drivers)\nLets operators/administration plan museums/hotels/restaurants (with different menus) and additional services for the tour\nLets operators/administration specify all the financial data needed for guides (including amounts for mobile, per-diem, and others)\nFilters all the language-specific resources (including guides) by the language of the current operator"
   },
   {
     "id": 4,
     "title": "RMS",
-    "image": "/src/assets/images/Restaurant.jpg",
-    "backgroundColor": "#BFE4D2",
+    "image": "/Restaurant.jpg",
+    "backgroundColor": "rgb(224 220 243)",
     "description": "The system has been created for LTD 'Mgzavruli' (Bakuriani resort) and consists of several parts:\nCentral system:\n- Register products by categories, menu, see orders, financial data, table statuses\nKitchen/Bar:\n- Has special monitors installed to see orders and set their statuses: NotSent/ Pending/ Done/ Failed:CannotImplement/ Failed:Spoiled\n- An Android system installed on pads letting:\n  - Register new accounts on tables,\n  - Add product items with appropriate quantities from categorized menu,\n  - Change product quantities before the customer is billed,\n  - Merge tables,\n  - Send requests to the kitchen or bar and get notifications back,\n  - Print/give customers invoices before closing tables"
   },
   {
     "id": 5,
     "title": "Dental MS",
-    "image": "/src/assets/images/DentalSoft.jpg",
-    "backgroundColor": "#CDE4BF",
+    "image": "/DentalSoft.jpg",
+    "backgroundColor": "rgb(224 220 243)",
     "description": "Dental S is created for dental clinics to improve patient service quality. The system has no analogies in Georgia and is installed in a number of clinics in Tbilisi and regions. Main functionality is:\nICD10, ICPC2, NSCP and LAB registers imported from moh.gov.ge\nPrice lists (linked to extendable ICD10-s, i.e. there can be added more specific diagnoses to standard ICD10 list and prices are attached to those local/inner diagnoses)\nRegistration of patient appointments by affiliates or preferred doctors in call centers/registration board\nPatient cards including general information needed for FORM100, information regarding allergies, x-ray and other pictures/files, previews visits and patient history\nRegistration of patient visits including:\nAll the materials used, diagnosis, prescriptions and inner descriptive data\nFinancial data regarding guarantees, one-time discounts, yearly discount cards or secondary visit discounts\nInsurance parameters of the patient\nPrint out reports: for insurance companies (most of the required export formats of Georgian insurance companies are integrated into the system), for patients: history cards and specific visit reports"
   },
   {
     "id": 6,
     "title": "Inventory",
-    "image": "/src/assets/images/Inventory.jpg",
-    "backgroundColor": "#E4BFBF",
+    "image": "/Inventory.jpg",
+    "backgroundColor": "rgb(224 220 243)",
     "description": "There are several warehouses registered in the system. In the warehouse, there is a list of products grouped by categories.\nProducts get registered in the system by several ways:\nIt can be purchased on the local market\nIt can be purchased from abroad\nIt can be a gift to the organization from any juridical unit\nIt can come back to any warehouse from any human resource or material item it has ever been linked to\nProducts can be transferred between warehouses on any date. Transportation type should be specified in case synchronization with rs.ge is needed (Revenue Service). Transportation executor can be specified for the reporting means. The user can select the source warehouse and see all the products in it with appropriate quantities. There is a number of restrictions on attempts to move/transfer the wrong list/number of products from any warehouse.\n\nThere are several ways for products to leave the warehouse it's been placed in:\nSales\nAmortization\nLink to any human resource or material item"
   },
   {
     "id": 7,
     "title": "Agropad",
-    "image": "/src/assets/images/AgroPad.jpg",
-    "backgroundColor": "#DFE4BF",
+    "image": "/AgroPad.jpg",
+    "backgroundColor": "rgb(224 220 243)",
     "description": "AgroPad is a name of a hardware+software solution, created for Mechanization LTD. The main functionality of the software installed on it is:\nSatellite-based weather forecasting\nWorkforce distribution on territories\nCustomized work planning and execution control\nMonitoring of workforce in the field with real-time monitoring of equipment on fields\nWeb portal for centralized planning and control\nWorkforce calendar for workforce planning\nData synchronization (asynchronously) with the main server\nConnection with GPS and weather monitoring satellites\nTasks, which are planned and being executed on territories, should be broken into steps (each step can be planned and monitored separately):"
   },
   {
     "id": 8,
     "title": "Document Flow",
-    "image": "/src/assets/images/DocumentFlow.jpg",
-    "backgroundColor": "#BFE4D2",
+    "image": "/DocumentFlow.jpg",
+    "backgroundColor": "rgb(224 220 243)",
     "description": "Document Flow Module allows creating, editing, and approving documents. Each document can have many data-entry forms and versions of those forms, which makes it very useful for enterprises with several partners of different types. Partners may share some data in the document, but still have their data separately. The module allows:\nCreating a document (first status is 'DRAFT')\nEdit the document form (and use in system for planning or current data)\nPreview document data entry forms (without data)\nDuplicate document and data to a new one (new number is generated)\nConfirm/document approval (approved status: APPROVED is set)\nLock the document\nSend document by email to the person who confirms\nPrint out the document data entry form (with data)\nThe approval process may consist of 1 or more steps. The flow of the document during approval could be controlled by a manual approving process (when someone clicks approve/reject and then clicks send to the next approving person) or by a workflow (when the system sends the document to the next person based on the internal workflow of the organization)"
   },
   {
     "id": 9,
     "title": "Market MS",
-    "image": "/src/assets/images/MarketMS.png",
-    "backgroundColor": "#CDE4BF",
+    "image": "/MarketMS.png",
+    "backgroundColor": "rgb(224 220 243)",
     "description": "Market MS is a software created for small/middle shops selling any type of products. The main idea is to provide all the required functionality for such a shop in an easy and user-friendly way. The main functionality:\nSupport of shop(s) registration and/or modification of existing data.\nProducts registration and sales history.\nMultiple shop support in one installation (centralized data is kept in one place, but locally shops may have different structures, i.e., for example, different categories or products available).\nReporting system based on daily, weekly or monthly sales (with and without tax calculation).\nIntegration with any fiscal device is supported (with simple development) for Georgian reality.\nIntegration with FDO for fiscal reporting\nAll the necessary data is configurable from the admin panel and automatically synchronized with all the necessary shops (after change/add action performed)"
   },
   {
     "id": 10,
     "title": "Hotel MS",
-    "image": "/src/assets/images/HotelMS.jpg",
-    "backgroundColor": "#E4BFBF",
+    "image": "/HotelMS.jpg",
+    "backgroundColor": "rgb(224 220 243)",
     "description": "Hotel MS is software created for networks of hotels with room rent + related services and entertainment services. The main functionality:\nAll the necessary information is stored in the system (including all the necessary documents).\nHotel network management\nRoom reservation\nRoom rent history\nRoom rent statistics\nRoom availability checks\nRoom rent cancellations\nBooking confirmations for clients\nBooking confirmations for sales manager\nSMS or email sending (if integrated)\nSales manager functionality\nRoom category management (based on their type, price, and service package)\nClient management\nIntegrated bar/restaurant management\nPayments management\nBar/restaurant payments\nRoom rent payments\nRefunds management\nCorporate clients\nRefunds for corporate clients\nAccounting module\nBalance reports\nPayments to suppliers\nSales statistics\nSales managers reports\nOccupancy rates (for each room and for the hotel in general)"
   },
   {
     "id": 11,
     "title": "Mechanisation",
-    "image": "/src/assets/images/Mechanization.jpg",
-    "backgroundColor": "#DFE4BF",
+    "image": "/Mechanization.jpg",
+    "backgroundColor": "rgb(224 220 243)",
     "description": "Mechanization LTD is a leading company in Georgia providing a number of services in the agricultural sector. The main features of Mechanization LTD software:\nManagement of affiliates\nClient management\nEmployer management\nWorkforce management\nEquipment management\nSeed and plant management\nLand management\nFertilization management\nIrrigation management\nCrop rotation\nAnimal management\nWarehouse management\nFinancial management\nCustomizable reports\nAutomatic data synchronization between affiliates\nPersonnel calendar\nTransportation management\nCustomizable document flow\nFull access control to different modules and features based on user roles"
   },
   {
     "id": 12,
     "title": "HR Management",
-    "image": "/src/assets/images/HrManagement.jpg",
-    "backgroundColor": "#CDE4BF",
+    "image": "/HrManagement.jpg",
+    "backgroundColor": "rgb(224 220 243)",
     "description": "There is registered a hierarchical network of organizations. Organization categories and subcategories are limited in levels (for example, country, region, city). Each of them has an appointed/created/hired staff. Each organization category is defined by an administrator and could be adjusted. Hierarchical organizations are managed by administrators. Administrators assign rights to other users. Each user has only one organization at a time but can be reassigned by admin. If a user has a management role, then additional functionality is unlocked (like managing employees, organization details, etc.).\nThe main functionality of the system:\nRegistration and modification of organizations (by admin or regional manager)\nRegistration and modification of employees\nEmployee record including personal data, career data, education data, document attachments, and photo\nRole management\nThe system allows an admin to manage roles and assign them to users\nRights management\nOnly admins are allowed to register and adjust roles and assign them to users\nDuties management\nOnly admins are allowed to register and adjust duties\nStaff scheduling\nOnly admins are allowed to schedule staff"
   },
   {
     "id": 13,
     "title": "GPI Agents",
-    "image": "/src/assets/images/GpiAgents.jpg",
-    "backgroundColor": "#DFE4BF",
+    "image": "/GpiAgents.jpg",
+    "backgroundColor": "rgb(224 220 243)",
     "description": "The software was created to automate motor and business insurance sales. The main features of the GPI Agents software include:\nIntegration with the GPI Portal\nIntegration with insurance companies\nIntegration with financial institutions\nIntegration with banks\nIntegration with tax inspection\nIntegration with health inspection\nIntegration with bureau of technical inspection\nIntegration with CEC\nIntegration with state municipal agencies\nIntegration with foreigners' agency\nIntegration with police department\nIntegration with the customs department\nIntegration with bailiffs\nIntegration with the social service department\nIntegration with the drug department\nIntegration with the Ministry of Justice\nIntegration with the Ministry of Foreign Affairs\nIntegration with the Ministry of Agriculture\nIntegration with the Ministry of Education\nIntegration with the Ministry of Finance\nIntegration with the Ministry of Energy\nIntegration with the Ministry of Economy\nIntegration with the Ministry of Environment Protection\nIntegration with the Ministry of IDPs\nIntegration with the Ministry of Regional Development\nIntegration with the Ministry of Sports\nIntegration with the Ministry of Culture\nIntegration with the Ministry of Corrections\nIntegration with the Ministry of Labor\nIntegration with the Ministry of Internal Affairs\nIntegration with the Ministry of Economy"
   },
   {
     "id": 14,
     "title": "Aldagi BCI NHCP",
-    "image": "/src/assets/images/NonHealthClaims.jpg",
-    "backgroundColor": "#CDE4BF",
+    "image": "/NonHealthClaims.jpg",
+    "backgroundColor": "rgb(224 220 243)",
     "description": "Non-Health Claim project is a software created to dynamically configure, register and process motor and business claims as well as all the business rules, validations, default value calculations and input parameter masks. As Aldagi BCI has a very complicated multi step logic of processing claims, which changes every time new insurance products are created or changes in business processes are approved, they needed a flexible way of keeping their software solutions always up to date. All the way starting from claim request registration in the call center till it is finally fulfilled is described in a dynamic sequence of states and transitions, where most of the departments. DevExpress XAF framework has been selected to be used for such requirements as it satisfies most of them and lets end users customize detail forms and layouts to personalize them, lets users create custom reports, export any data to standard formats and set up a custom workflow specific to any organization."
   },
   {
     "id": 15,
     "title": "Distribution MS",
-    "image": "/src/assets/images/Distribution.jpg",
-    "backgroundColor": "#DFE4BF",
+    "image": "/Distribution.jpg",
+    "backgroundColor": "rgb(224 220 243)",
     "description": "FNXCo Holding Silver Label has developed a web panel for local distributors, letting them register WayBills and SybWayBills when they provide products to shops. They specify driver/car information and start and end addresses in one record, and the system uses last parameters to simplify form fill process. Distributors also have to specify products and their quantities and upload this information to the official server of Revenue Service (rs.ge). The main advantage of using our panel is decreased internet traffic, as distributors buy internet packages from local internet providers or mobile operators. So our solution significantly decreases their expenses. Another advantage is non-attachment to the internet connection, as they can accumulate records and synchronize them with rs.ge when they get back to places with internet. The system is accessed via mobile phones or pads. And, if there is an Android system installed on them, we also provide them our own Android internet browser, which has some minor changes to browse XAF Web application in a better way."
   },
   {
     "id": 16,
     "title": "Task Portal",
-    "image": "/src/assets/images/TaskSoft.jpg",
-    "backgroundColor": "#CDE4BF",
+    "image": "/TaskSoft.jpg",
+    "backgroundColor": "rgb(224 220 243)",
     "description": "Tasks web portal is created for organizations with two or three role-based processing of tasks: Task generators (project managers), Executors, Testers (quality assurance staff). Main modules of the system are: Management of projects, project versions/releases, change logs, customers. Tasks grouped by dates, executors, resent activity dashboards. Tested tasks, rejected tasks, comments, descriptive files. Knowledge base (how-to section). Discussions inside the company or with customers. Attendance of employees."
   },
   {
     "id": 17,
     "title": "BigBoss MS",
-    "image": "/src/assets/images/BigBossMS.jpg",
-    "backgroundColor": "#DFE4BF",
+    "image": "/BigBossMS.jpg",
+    "backgroundColor": "rgb(224 220 243)",
     "description": "BigBoss MS is a complex management system for small and middle-size companies in the Service Providing Sector. It is used to manage Software Development, Website Development, Architecture, Marketing, and other consulting/Service provider companies. The system also includes a basic accounting system and a contracting system. Main modules of the software: Mini version of Human Resource Management system. Tasks Management. Liabilities Management. Customer Relationship Management. Contract Management (including all steps from Offering). Transfer Receiving Acts. Invoices Management. Penalties Calculation System. Document Registration Module. Inventory Management (including responsible persons). Payments Management (including budgeting). Income Management. Tax Management. The software runs on the Windows platform and SQL Database. It contains a Report Designer to let each user/customer modify or create needed print out forms."
   },
   {
     "id": 18,
     "title": "OfficeBox",
-    "image": "/src/assets/images/OfficeBox.jpg",
-    "backgroundColor": "#CDE4BF",
+    "image": "/OfficeBox.jpg",
+    "backgroundColor": "rgb(224 220 243)",
     "description": "OfficeBox is a module to be integrated into any our software or used as a standalone application. OfficeBox package has been created to let customers get rid of lots of different software and work with data in one centralized place. All the users in the system have specific roles assigned. Based on this, they have different object access permissions, can do different operations, make transitions of data to different statuses, have access to different reports and statistics. Main functions of OfficeBox are: Management of Document Flow in the organization, tracking of paper documents brought to the organization by couriers/agents/outer resources. Contacts/address book every user can have and share among other users. The registry is quite useful for administrative and sales departments. Tasks system (can also be used as a separate module, see its description in several slides). Discussions module can be used the same way forums are used. Here are posted topics to be formalized and approved before starting official processes. Scheduler/Calendar for all the events and tasks assigned to specific dates to remind users to get things done in time."
   }
 ]
