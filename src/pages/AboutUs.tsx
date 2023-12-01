@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import mobileImg from "../assets/images/aboutmobile.svg";
 import desktopImg from "../assets/images/aboutDesktop.svg";
+import Footer from "../components/Footer";
 
 const AboutUs = () => {
   return (
@@ -40,6 +41,7 @@ const AboutUs = () => {
           </TextDiv>
         </Content>
       </MainContainer>
+      <Footer />
     </>
   );
 };

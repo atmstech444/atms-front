@@ -4,9 +4,11 @@ import Design from "../assets/images/design.png";
 import Development from "../assets/images/development.png";
 import Delivery from "../assets/images/delivery.png";
 import Arrow from "../assets/icons/Arrow - Down Circle.svg";
-import FirstSliderDesktop from "../components/FirstSliderDesktop";
+import ArrowProject from "../assets/icons/Arrow - Right Circle.svg";
+// import FirstSliderDesktop from "../components/FirstSliderDesktop";
 import Footer from "../components/Footer";
-import SecondSliderDesktop from "../components/SecondSliderDesktop";
+// import SecondSliderDesktop from "../components/SecondSliderDesktop";
+import data from "../../projectsData.json";
 import { useNavigate } from "react-router-dom";
 interface MainProps {
   scroll: string;
@@ -16,7 +18,9 @@ export const Home = () => {
   const contentRef = useRef<HTMLDivElement>(null);
   // const [, setIsMobileScreen] = useState<boolean>(window.innerWidth <= 768);
   const navigate = useNavigate();
-
+  const handleArrowClick = (projectId: number) => {
+    navigate(`/detailed/${projectId}`);
+  };
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
@@ -102,17 +106,88 @@ export const Home = () => {
             </div>
           </RectangleDiv>
         </Services>
-        <div>
+        {/* <div>
           <FirstSliderDesktop />
         </div>
         <div>
           <SecondSliderDesktop />
-        </div>
+        </div> */}
+        <Projects>
+          <AboutText>PROJECTS</AboutText>
+          <Line></Line>
+          <ProjectsData>
+            {data.slice(0, 4).map((item) => (
+              <ProjectContent
+                key={item.id}
+                onClick={() => handleArrowClick(item.id)}
+              >
+                <ProjectItemContainer>
+                  <h2>{item.title}</h2>
+                  <ProjectImage src={item.image} alt={item.title} />
+                  {/* <Description>{item.description}</Description> */}
+                  <ArrowIcon src={ArrowProject} />
+                </ProjectItemContainer>
+              </ProjectContent>
+            ))}
+          </ProjectsData>
+          <Button onClick={() => navigate("/project")}>Show More</Button>
+        </Projects>
         <Footer />
       </Content>
     </div>
   );
 };
+const ProjectsData = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  gap: 30px;
+`;
+const Projects = styled.div`
+  width: 90%;
+  margin: auto;
+  margin-top: 126px;
+  @media (min-width: 1025px) {
+    max-width: 1440px;
+  }
+`;
+const ProjectItemContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  padding-top: 16px;
+  padding-bottom: 40px;
+  margin-left: 20px;
+  margin-top: 20px;
+`;
+const ProjectContent = styled.div`
+  display: flex;
+  background-color: rgb(224 220 243);
+  gap: 60px;
+
+  &:hover {
+    cursor: pointer;
+  }
+  @media (min-width: 678px) {
+    width: 45%;
+  }
+  @media (min-width: 1025px) {
+    width: 22%;
+  }
+`;
+
+const ProjectImage = styled.img`
+  width: 85%;
+`;
+
+const ArrowIcon = styled.img`
+  &:hover {
+    cursor: pointer;
+  }
+`;
 const RectangleDiv = styled.div`
   display: flex;
   justify-content: space-between;
@@ -232,11 +307,12 @@ const Content = styled.div<MainProps>`
 const Container = styled.div`
   position: absolute;
   width: 100%;
-  top: 0;
+  top: 20%;
   margin-top: 80px;
   @media (min-width: 1025px) {
     font-size: 64px;
     margin-top: 280px;
+    top: 5%;
   }
   h1 {
     font-size: 24px;

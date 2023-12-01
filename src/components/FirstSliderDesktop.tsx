@@ -67,7 +67,7 @@ const FirstSliderDesktop: React.FC = () => {
       id: 1,
       title: "Yoga Club",
       image: `${YogaPicture}`,
-      backgroundColor: "#C3BFE4",
+      backgroundColor: "rgb(51, 57, 67)",
       description:
         "Software for managing a spa/fitness/yoga center. Managing abonements, customer visits, regular classes, schedules and a built-in caffee. Individual visits, group visits, duration sales and unlimited sales",
     },
@@ -75,7 +75,7 @@ const FirstSliderDesktop: React.FC = () => {
       id: 2,
       title: "Hospital ERP",
       image: `${HospitalMS}`,
-      backgroundColor: "#BFD4E4",
+      backgroundColor: "rgb(51, 57, 67)",
       description:
         "Software for managing a network of hospitals. Medicines, ambulatory and hospital visits services and calculations, medical staff attendance and work outs.",
     },
@@ -123,7 +123,7 @@ const FirstSliderDesktop: React.FC = () => {
       id: 8,
       title: "Document Flow",
       image: `${DocumentFlow}`,
-      backgroundColor: "#BFE4D2",
+      backgroundColor: "rgb(51, 57, 67)",
       description:
         "Software for automation of sending/approving and editing official documents brought to the office printed on paper. Electronization, versioning and archieving of documents.",
     },
@@ -293,12 +293,15 @@ const NextArrow = styled(ArrowButton)`
   margin-left: 10px;
 `;
 const SliderMain = styled.div`
-  width: 1100px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   margin-top: 100px;
   overflow-x: hidden;
+  @media (min-width: 768px) {
+    width: 1000px;
+  }
   @media (min-width: 1440px) {
     width: 1440px;
   }

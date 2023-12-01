@@ -293,12 +293,15 @@ const NextArrow = styled(ArrowButton)`
 `;
 
 const SliderMain = styled.div`
-  width: 1100px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   margin-top: 30px;
   overflow-x: hidden;
+  @media (min-width: 768px) {
+    width: 1000px;
+  }
   @media (min-width: 1440px) {
     width: 1440px;
   }
